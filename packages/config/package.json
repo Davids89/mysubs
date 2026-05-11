@@ -1,0 +1,15 @@
+{
+  "name": "@mysubs/config",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig-base": "../../tsconfig.base.json"
+  },
+  "scripts": {
+    "build": "echo \"No config build needed\"",
+    "test": "echo \"No config tests needed\""
+  },
+  "devDependencies": {
+    "typescript": "^5"
+  }
+}

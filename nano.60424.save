@@ -1,0 +1,5 @@
+As first prompt we are going to build the apps as AGENTS.md suggest. We are going to respect the structure and also we need to add a docker compose file to trigger up the backend.
+
+Besided we need to create a spec folder to allocate our tests and create a initial endpoint and its test.
+
+Modify AGENTS.md if you think it is neccessary

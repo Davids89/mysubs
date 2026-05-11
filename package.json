@@ -1,0 +1,17 @@
+{
+  "name": "mysubs",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "docker:down": "docker compose down",
+    "docker:up": "docker compose up --build",
+    "test": "turbo test",
+    "test:backend": "pnpm --filter @mysubs/backend test"
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "typescript": "^5.9.3"
+  }
+}

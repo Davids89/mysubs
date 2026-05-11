@@ -1,0 +1,17 @@
+{
+  "name": "@mysubs/mobile",
+  "private": true,
+  "scripts": {
+    "dev": "expo start",
+    "test": "echo \"No mobile tests yet\"",
+    "build": "echo \"Use EAS Build for mobile artifacts\""
+  },
+  "dependencies": {
+    "expo": "latest",
+    "react": "latest",
+    "react-native": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

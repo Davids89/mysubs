@@ -1,0 +1,9 @@
+{
+  "expo": {
+    "name": "MySubs",
+    "slug": "mysubs",
+    "scheme": "mysubs",
+    "version": "1.0.0",
+    "orientation": "portrait"
+  }
+}

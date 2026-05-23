@@ -96,6 +96,13 @@ spec/
 └── [domain]/
     └── [use-case].test.ts
 
+### Database / Prisma
+
+- Before creating or changing Prisma models, inspect any ERD or schema attachment linked from the issue and treat it as the source of truth.
+- The backend uses Prisma 7 with PostgreSQL. Use `prisma.config.ts`, an explicit generated client output, and the PostgreSQL adapter (`@prisma/adapter-pg`).
+- Initialize Prisma with `new PrismaClient({ adapter })`; do not use the older no-argument constructor.
+- For database setup tasks, update `docker-compose.yml`, `.env.example`, Prisma scripts, schema, and migrations together.
+- After Prisma changes, run `prisma format`, backend build, and backend tests.
 
 ---
 

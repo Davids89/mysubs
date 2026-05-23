@@ -5,3 +5,4 @@ coverage/
 .env
 .env.*
 !.env.example
+apps/backend/src/generated/prisma/

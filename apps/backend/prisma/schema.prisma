@@ -1,0 +1,42 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id            String             @id @default(uuid()) @db.Uuid
+  name          String
+  email         String
+  birthday      DateTime           @db.Date
+  country       String
+  subscriptions UserSubscription[]
+
+  @@map("users")
+}
+
+model Subscription {
+  id          String             @id @default(uuid()) @db.Uuid
+  name        String
+  endDate     DateTime           @map("end_date") @db.Date
+  isShared    Boolean            @map("is_shared")
+  icon        String
+  subscribers UserSubscription[]
+
+  @@map("subscriptions")
+}
+
+model UserSubscription {
+  userId         String       @map("user_id") @db.Uuid
+  subscriptionId String       @map("subscription_id") @db.Uuid
+  joinedAt       DateTime     @map("joined_at") @db.Date
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subscription   Subscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@id([userId, subscriptionId])
+  @@index([subscriptionId])
+  @@map("user_subscriptions")
+}

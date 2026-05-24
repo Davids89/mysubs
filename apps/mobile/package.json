@@ -2,9 +2,12 @@
   "name": "@mysubs/mobile",
   "private": true,
   "scripts": {
+    "build:android": "eas build --platform android",
     "dev": "expo start",
+    "lint": "eslint App.tsx --max-warnings=0",
     "test": "echo \"No mobile tests yet\"",
-    "build": "echo \"Use EAS Build for mobile artifacts\""
+    "build": "echo \"Use EAS Build for mobile artifacts\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "expo": "latest",
@@ -12,6 +15,7 @@
     "react-native": "latest"
   },
   "devDependencies": {
+    "@types/react": "^19.2.15",
     "typescript": "^5.9.3"
   }
 }

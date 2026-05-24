@@ -9,9 +9,11 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
+    "lint": "eslint src spec --max-warnings=0",
     "start": "node dist/main.js",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "typecheck": "DATABASE_URL=postgresql://mysubs:mysubs@localhost:5432/mysubs?schema=public prisma generate && tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.8.0",

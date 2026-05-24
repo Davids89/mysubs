@@ -4,6 +4,9 @@
     "slug": "mysubs",
     "scheme": "mysubs",
     "version": "1.0.0",
-    "orientation": "portrait"
+    "orientation": "portrait",
+    "android": {
+      "package": "com.davids89.mysubs"
+    }
   }
 }

@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: mysubs_test
+      POSTGRES_USER: mysubs
+      POSTGRES_PASSWORD: mysubs
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U mysubs -d mysubs_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    tmpfs:
+      - /var/lib/postgresql/data
+
+  test:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    command: >
+      sh -c "pnpm --filter @mysubs/backend db:deploy &&
+      pnpm --filter @mysubs/backend test"
+    environment:
+      NODE_ENV: test
+      DATABASE_URL: postgresql://mysubs:mysubs@db:5432/mysubs_test?schema=public
+    depends_on:
+      db:
+        condition: service_healthy

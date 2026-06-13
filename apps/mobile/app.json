@@ -5,6 +5,7 @@
     "scheme": "mysubs",
     "version": "1.0.0",
     "orientation": "portrait",
+    "plugins": ["expo-router"],
     "android": {
       "package": "com.davids89.mysubs"
     }

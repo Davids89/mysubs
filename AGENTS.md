@@ -168,6 +168,7 @@ If a function exceeds any of these limits, it **must be split** before committin
 
 ## 9. React Native Conventions (Mobile)
 
+* For any mobile task, also read and apply `apps/mobile/AGENTS.md` before changing files under `apps/mobile/` or mobile-facing code in `packages/ui-components/`.
 * One component per file. Filename = Component name (`UserCard.tsx`).
 * State logic and effects go in a custom hook (`useUserCard.ts`), not in the component.
 * Components only receive props and render; they do not call the API directly.

@@ -37,9 +37,10 @@ export default [
     },
   },
   {
-    files: ["**/*.test.ts", "**/vitest.config.ts"],
+    files: ["**/*.test.ts", "**/*.test.tsx", "**/vitest.config.ts"],
     languageOptions: {
       globals: {
+        ...globals.jest,
         ...globals.vitest,
       },
     },

@@ -9,10 +9,10 @@ datasource db {
 
 model User {
   id            String             @id @default(uuid()) @db.Uuid
-  name          String
-  email         String
-  birthday      DateTime           @db.Date
-  country       String
+  firstName     String             @map("first_name")
+  lastName      String             @map("last_name")
+  email         String             @unique
+  passwordHash  String             @map("password_hash")
   subscriptions UserSubscription[]
 
   @@map("users")

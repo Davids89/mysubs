@@ -19,6 +19,7 @@ COPY packages/ui-components/package.json packages/ui-components/package.json
 RUN pnpm install --filter @mysubs/backend... --frozen-lockfile
 
 COPY apps/backend apps/backend
+COPY packages packages
 
 EXPOSE 3000
 

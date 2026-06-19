@@ -1,7 +1,9 @@
 export type Theme = {
   colors: {
     background: string;
+    border: string;
     card: string;
+    danger: string;
     mutedText: string;
     primary: string;
     primaryText: string;
@@ -29,7 +31,9 @@ export type Theme = {
 export const lightTheme: Theme = {
   colors: {
     background: "#F8FAFC",
+    border: "#CBD5E1",
     card: "#FFFFFF",
+    danger: "#DC2626",
     mutedText: "#64748B",
     primary: "#2563EB",
     primaryText: "#FFFFFF",

@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
-  "react-native": "./src/index.ts",
+  "react-native": "./src/index.native.ts",
   "types": "./src/index.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",

@@ -23,6 +23,7 @@ services:
     environment:
       NODE_ENV: test
       DATABASE_URL: postgresql://mysubs:mysubs@db:5432/mysubs_test?schema=public
+      JWT_SECRET: test-jwt-secret
     depends_on:
       db:
         condition: service_healthy

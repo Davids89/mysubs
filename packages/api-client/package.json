@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/api-client",
+  "name": "@subtrack/api-client",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",
@@ -15,6 +15,6 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "@mysubs/shared-types": "workspace:^"
+    "@subtrack/shared-types": "workspace:^"
   }
 }

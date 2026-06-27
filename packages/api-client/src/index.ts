@@ -3,7 +3,7 @@ import {
   type AuthResponse,
   type LoginUserRequest,
   type RegisterUserRequest,
-} from "@mysubs/shared-types";
+} from "@subtrack/shared-types";
 
 type ApiClientOptions = {
   baseUrl: string;

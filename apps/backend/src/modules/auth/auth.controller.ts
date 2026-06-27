@@ -1,7 +1,7 @@
 import {
   loginUserRequestSchema,
   registerUserRequestSchema,
-} from "@mysubs/shared-types";
+} from "@subtrack/shared-types";
 import { Router, type NextFunction, type Request, type Response } from "express";
 
 import type {

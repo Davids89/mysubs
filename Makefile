@@ -23,13 +23,13 @@ dev:
 	$(PNPM) dev
 
 backend-dev:
-	$(PNPM) --filter @mysubs/backend dev
+	$(PNPM) --filter @subtrack/backend dev
 
 mobile-android:
 	ANDROID_HOME="$(ANDROID_SDK)" \
 	ANDROID_SDK_ROOT="$(ANDROID_SDK)" \
 	PATH="$(ANDROID_SDK)/platform-tools:$(ANDROID_SDK)/emulator:$$PATH" \
-	$(PNPM) --filter @mysubs/mobile exec expo start --android
+	$(PNPM) --filter @subtrack/mobile exec expo start --android
 
 up:
 	docker compose up --build

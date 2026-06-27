@@ -2,7 +2,7 @@ import {
   lightTheme,
   ThemeProvider,
   useTheme,
-} from "@mysubs/ui-components";
+} from "@subtrack/ui-components";
 import { render } from "@testing-library/react-native";
 import { Text } from "react-native";
 

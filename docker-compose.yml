@@ -2,15 +2,15 @@ services:
   db:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: mysubs
-      POSTGRES_USER: mysubs
-      POSTGRES_PASSWORD: mysubs
+      POSTGRES_DB: subtrack
+      POSTGRES_USER: subtrack
+      POSTGRES_PASSWORD: subtrack
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mysubs -d mysubs"]
+      test: ["CMD-SHELL", "pg_isready -U subtrack -d subtrack"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -19,11 +19,11 @@ services:
     build:
       context: .
       dockerfile: apps/backend/Dockerfile
-    command: pnpm --filter @mysubs/backend dev
+    command: pnpm --filter @subtrack/backend dev
     environment:
       NODE_ENV: development
       PORT: 3000
-      DATABASE_URL: postgresql://mysubs:mysubs@db:5432/mysubs?schema=public
+      DATABASE_URL: postgresql://subtrack:subtrack@db:5432/subtrack?schema=public
       JWT_SECRET: development-jwt-secret
     ports:
       - "3000:3000"

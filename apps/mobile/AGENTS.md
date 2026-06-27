@@ -27,7 +27,7 @@ Read this file before implementing any mobile task.
 ## Theme And UI Primitives
 
 - Reusable design tokens, theme providers, and shared UI primitives belong in `packages/ui-components`.
-- Mobile screens should consume theme values through `ThemeProvider` and `useTheme` from `@mysubs/ui-components`.
+- Mobile screens should consume theme values through `ThemeProvider` and `useTheme` from `@subtrack/ui-components`.
 - Keep `packages/ui-components` reusable. It may depend on React/React Native as peer dependencies, but it must not import from `apps/*`.
 - Theme token types should allow valid custom themes in tests and future brand modes; avoid overly literal token types that make overrides impossible.
 
@@ -41,9 +41,9 @@ Read this file before implementing any mobile task.
 
 ## Scripts And Verification
 
-- Mobile lint should cover `app` and `src`: `pnpm --filter @mysubs/mobile lint`.
-- Mobile typecheck should include route and source files: `pnpm --filter @mysubs/mobile typecheck`.
-- Mobile tests should run with: `pnpm --filter @mysubs/mobile test`.
+- Mobile lint should cover `app` and `src`: `pnpm --filter @subtrack/mobile lint`.
+- Mobile typecheck should include route and source files: `pnpm --filter @subtrack/mobile typecheck`.
+- Mobile tests should run with: `pnpm --filter @subtrack/mobile test`.
 - After mobile changes, also run root checks:
   - `pnpm lint`
   - `pnpm typecheck`
@@ -52,15 +52,15 @@ Read this file before implementing any mobile task.
 
 ## Running The App Locally
 
-- Start Expo with `pnpm --filter @mysubs/mobile exec expo start`.
-- Launch Android with `pnpm --filter @mysubs/mobile exec expo start --android`.
+- Start Expo with `pnpm --filter @subtrack/mobile exec expo start`.
+- Launch Android with `pnpm --filter @subtrack/mobile exec expo start --android`.
 - If `adb` is not found, set the Android SDK environment for the command:
 
 ```sh
 ANDROID_HOME="$HOME/Android/Sdk" \
 ANDROID_SDK_ROOT="$HOME/Android/Sdk" \
 PATH="$HOME/Android/Sdk/platform-tools:$HOME/Android/Sdk/emulator:$PATH" \
-pnpm --filter @mysubs/mobile exec expo start --android
+pnpm --filter @subtrack/mobile exec expo start --android
 ```
 
 - Before launching Android, verify a device is visible with:

@@ -1,6 +1,6 @@
 # Authentication Flow
 
-This document explains the current MySubs authentication flow for new teammates. It covers how registration and login move through the mobile app, shared packages, backend CQRS handlers, and the database.
+This document explains the current Subtrack authentication flow for new teammates. It covers how registration and login move through the mobile app, shared packages, backend CQRS handlers, and the database.
 
 ## Big Picture
 
@@ -14,9 +14,9 @@ Authentication is split across the monorepo so each layer has one clear responsi
 
 ```mermaid
 flowchart LR
-  Mobile[Expo mobile app] --> ApiClient["@mysubs/api-client"]
+  Mobile[Expo mobile app] --> ApiClient["@subtrack/api-client"]
   ApiClient --> Backend["Express /auth routes"]
-  Backend --> Shared["@mysubs/shared-types Zod schemas"]
+  Backend --> Shared["@subtrack/shared-types Zod schemas"]
   Backend --> Handler["CQRS command handlers"]
   Handler --> Repo["Auth repository"]
   Handler --> Security["bcrypt + JWT services"]
@@ -73,7 +73,7 @@ flowchart TD
   SubmitRegister --> AuthApiRegister["authApiClient.register"]
   AuthApi --> StoreToken["AuthSessionProvider.signIn stores token"]
   AuthApiRegister --> StoreToken
-  StoreToken --> SecureStore["SecureStore: mysubs.authToken"]
+  StoreToken --> SecureStore["SecureStore: subtrack.authToken"]
   StoreToken --> Home["Navigate to /home or registration success"]
 ```
 
@@ -92,7 +92,7 @@ flowchart TD
 `RegisterScreen` is also presentational. State, validation, API calls, and navigation live in `useRegisterScreen`.
 
 1. The user enters name, surname, email, password, and confirmation.
-2. The hook validates email, password length, and password confirmation with `@mysubs/business-logic`.
+2. The hook validates email, password length, and password confirmation with `@subtrack/business-logic`.
 3. If validation passes, it calls `authApiClient.register(form)`.
 4. On success, the token is stored through `AuthSessionProvider.signIn(token)`.
 5. The app navigates to `/(auth)/registration-success` with the user's first name.
@@ -185,7 +185,7 @@ Tokens are issued by `JwtTokenIssuer`:
 - In production, missing `JWT_SECRET` fails backend startup.
 - In development, the backend falls back to `development-jwt-secret`.
 
-On mobile, the token is stored in Expo SecureStore under `mysubs.authToken`.
+On mobile, the token is stored in Expo SecureStore under `subtrack.authToken`.
 
 ```mermaid
 flowchart LR

@@ -1,4 +1,4 @@
-import type { AuthResponse } from "@mysubs/shared-types";
+import type { AuthResponse } from "@subtrack/shared-types";
 
 import type {
   AuthRepository,

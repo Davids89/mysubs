@@ -1,4 +1,4 @@
-import { Button, TextField, useTheme } from "@mysubs/ui-components";
+import { Button, TextField, useTheme } from "@subtrack/ui-components";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { AuthScreenLayout } from "../components/AuthScreenLayout";
@@ -19,7 +19,15 @@ export function RegisterScreen() {
   return (
     <AuthScreenLayout subtitle="Solo te llevará un momento" title="Crea tu cuenta">
       <Pressable onPress={goBack}>
-        <Text style={[styles.link, { color: theme.colors.primary }]}>
+        <Text
+          style={[
+            styles.link,
+            {
+              color: theme.colors.brand.dark,
+              fontWeight: theme.typography.label.weight,
+            },
+          ]}
+        >
           Volver
         </Text>
       </Pressable>
@@ -66,13 +74,23 @@ export function RegisterScreen() {
         Al registrarte aceptas los términos de uso y la política de privacidad
       </Text>
       {errors.form ? (
-        <Text style={{ color: theme.colors.danger }}>{errors.form}</Text>
+        <Text style={{ color: theme.colors.semantic.danger.text }}>
+          {errors.form}
+        </Text>
       ) : null}
       <Button disabled={isSubmitting} label="Crear cuenta" onPress={submit} />
       <View style={styles.footer}>
         <Text style={{ color: theme.colors.mutedText }}>¿Ya tienes cuenta?</Text>
         <Pressable onPress={goToLogin}>
-          <Text style={[styles.link, { color: theme.colors.primary }]}>
+          <Text
+            style={[
+              styles.link,
+              {
+                color: theme.colors.brand.dark,
+                fontWeight: theme.typography.label.weight,
+              },
+            ]}
+          >
             Inicia sesión
           </Text>
         </Pressable>
@@ -86,7 +104,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 4,
   },
-  link: {
-    fontWeight: "700",
-  },
+  link: {},
 });

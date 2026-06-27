@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 
-const AUTH_TOKEN_KEY = "mysubs.authToken";
+const AUTH_TOKEN_KEY = "subtrack.authToken";
 
 type AuthSession = {
   isLoading: boolean;

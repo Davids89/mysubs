@@ -1,4 +1,4 @@
-import { useTheme } from "@mysubs/ui-components";
+import { useTheme } from "@subtrack/ui-components";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 

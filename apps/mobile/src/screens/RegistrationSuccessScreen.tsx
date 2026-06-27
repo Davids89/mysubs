@@ -1,4 +1,4 @@
-import { Button, useTheme } from "@mysubs/ui-components";
+import { Button, useTheme } from "@subtrack/ui-components";
 import { StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -6,43 +6,68 @@ import { useRegistrationSuccessScreen } from "../hooks/useRegistrationSuccessScr
 
 export function RegistrationSuccessScreen() {
   const theme = useTheme();
-  const { displayName, goToHome } = useRegistrationSuccessScreen();
+  const { content, goToHome } = useRegistrationSuccessScreen();
 
   return (
     <SafeAreaView
-      style={[styles.safeArea, { backgroundColor: theme.colors.background }]}
+      style={[
+        styles.safeArea,
+        {
+          backgroundColor: theme.colors.surface.page,
+          padding: theme.spacing.xl,
+        },
+      ]}
     >
-      <View style={[styles.card, { backgroundColor: theme.colors.card }]}>
-        <Text style={[styles.title, { color: theme.colors.text }]}>
-          ¡Cuenta creada!
+      <View
+        style={[
+          styles.card,
+          {
+            backgroundColor: theme.colors.surface.raised,
+            borderRadius: theme.radius.lg,
+            gap: theme.spacing.lg,
+            padding: theme.spacing.xl,
+          },
+        ]}
+      >
+        <Text
+          style={[
+            styles.title,
+            {
+              color: theme.colors.textRole.primary,
+              fontSize: theme.typography.title.size,
+              fontWeight: theme.typography.title.weight,
+            },
+          ]}
+        >
+          {content.title}
         </Text>
-        <Text style={[styles.subtitle, { color: theme.colors.mutedText }]}>
-          Bienvenida a Subtrack, {displayName}. Ya puedes empezar a gestionar
-          tus suscripciones.
+        <Text
+          style={[
+            styles.subtitle,
+            {
+              color: theme.colors.textRole.muted,
+              fontSize: theme.typography.bodySmall.size,
+            },
+          ]}
+        >
+          {content.subtitle}
         </Text>
-        <Button label="Ir a mis suscripciones" onPress={goToHome} />
+        <Button label={content.actionLabel} onPress={goToHome} />
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    borderRadius: 24,
-    gap: 20,
-    padding: 24,
-  },
+  card: {},
   safeArea: {
     flex: 1,
     justifyContent: "center",
-    padding: 24,
   },
   subtitle: {
-    fontSize: 16,
-    lineHeight: 24,
+    lineHeight: 21,
   },
   title: {
-    fontSize: 32,
-    fontWeight: "700",
+    lineHeight: 28,
   },
 });

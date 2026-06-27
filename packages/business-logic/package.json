@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/business-logic",
+  "name": "@subtrack/business-logic",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",

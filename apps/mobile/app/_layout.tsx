@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 
-import { ThemeProvider } from "@mysubs/ui-components";
+import { ThemeProvider } from "@subtrack/ui-components";
 import { Stack } from "expo-router";
 
 import { AuthSessionProvider } from "../src/auth/AuthSessionProvider";

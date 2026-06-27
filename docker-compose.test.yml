@@ -2,11 +2,11 @@ services:
   db:
     image: postgres:17-alpine
     environment:
-      POSTGRES_DB: mysubs_test
-      POSTGRES_USER: mysubs
-      POSTGRES_PASSWORD: mysubs
+      POSTGRES_DB: subtrack_test
+      POSTGRES_USER: subtrack
+      POSTGRES_PASSWORD: subtrack
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U mysubs -d mysubs_test"]
+      test: ["CMD-SHELL", "pg_isready -U subtrack -d subtrack_test"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -18,11 +18,11 @@ services:
       context: .
       dockerfile: apps/backend/Dockerfile
     command: >
-      sh -c "pnpm --filter @mysubs/backend db:deploy &&
-      pnpm --filter @mysubs/backend test"
+      sh -c "pnpm --filter @subtrack/backend db:deploy &&
+      pnpm --filter @subtrack/backend test"
     environment:
       NODE_ENV: test
-      DATABASE_URL: postgresql://mysubs:mysubs@db:5432/mysubs_test?schema=public
+      DATABASE_URL: postgresql://subtrack:subtrack@db:5432/subtrack_test?schema=public
       JWT_SECRET: test-jwt-secret
     depends_on:
       db:

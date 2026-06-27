@@ -16,11 +16,11 @@ COPY packages/config/package.json packages/config/package.json
 COPY packages/shared-types/package.json packages/shared-types/package.json
 COPY packages/ui-components/package.json packages/ui-components/package.json
 
-RUN pnpm install --filter @mysubs/backend... --frozen-lockfile
+RUN pnpm install --filter @subtrack/backend... --frozen-lockfile
 
 COPY apps/backend apps/backend
 COPY packages packages
 
 EXPOSE 3000
 
-CMD ["pnpm", "--filter", "@mysubs/backend", "dev"]
+CMD ["pnpm", "--filter", "@subtrack/backend", "dev"]

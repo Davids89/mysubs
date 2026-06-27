@@ -1,5 +1,5 @@
 {
-  "name": "mysubs",
+  "name": "subtrack",
   "private": true,
   "packageManager": "pnpm@9.15.4",
   "scripts": {
@@ -9,7 +9,7 @@
     "docker:up": "docker compose up --build",
     "lint": "turbo lint",
     "test": "turbo test",
-    "test:backend": "pnpm --filter @mysubs/backend test",
+    "test:backend": "pnpm --filter @subtrack/backend test",
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {

@@ -1,0 +1,15 @@
+---
+description: Create or switch to a feature branch from the GitHub task ID
+alwaysApply: true
+---
+
+# Feature Branch From GitHub Task
+
+When starting a new feature from a GitHub issue, project item, or task URL:
+
+- Identify the GitHub issue ID before making code changes.
+- Check the current git branch.
+- If the current branch is not already for that task, create or switch to a feature branch that includes the issue ID.
+- Prefer branch names in the form `issue-<id>-short-description`, for example `issue-7-design-tokens`.
+- Do not create a branch when the user is only asking questions, reviewing code, or explicitly says not to change branches.
+- Do not discard, reset, or overwrite uncommitted work while changing branches. If local changes block the branch change, ask the user how to proceed.

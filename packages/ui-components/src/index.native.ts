@@ -1,5 +1,5 @@
-export { Button } from "./Button";
-export { TextField } from "./TextField";
-export { ThemeProvider, useTheme } from "./theme/ThemeProvider";
-export { lightTheme } from "./theme/tokens";
-export type { Theme } from "./theme/tokens";
+export { Button } from "./Button.js";
+export { TextField } from "./TextField.js";
+export { ThemeProvider, useTheme } from "./theme/ThemeProvider.js";
+export { lightTheme } from "./theme/tokens.js";
+export type { Theme } from "./theme/tokens.js";

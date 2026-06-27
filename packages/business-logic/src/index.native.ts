@@ -1,1 +1,1 @@
-export * from "./auth/auth-validation";
+export * from "./auth/auth-validation.js";

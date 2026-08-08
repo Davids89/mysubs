@@ -2,8 +2,6 @@ module.exports = {
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
     "^@subtrack/api-client$": "<rootDir>/../../packages/api-client/src/index.ts",
-    "^@subtrack/business-logic$":
-      "<rootDir>/../../packages/business-logic/src/index.ts",
     "^@subtrack/shared-types$":
       "<rootDir>/../../packages/shared-types/src/index.ts",
     "^@subtrack/ui-components$":

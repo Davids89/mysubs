@@ -11,8 +11,6 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json tsconfig.base.js
 COPY apps/backend/package.json apps/backend/package.json
 COPY apps/mobile/package.json apps/mobile/package.json
 COPY packages/api-client/package.json packages/api-client/package.json
-COPY packages/business-logic/package.json packages/business-logic/package.json
-COPY packages/config/package.json packages/config/package.json
 COPY packages/shared-types/package.json packages/shared-types/package.json
 COPY packages/ui-components/package.json packages/ui-components/package.json
 

@@ -1,12 +1,20 @@
 import { z } from "zod";
 
+const MIN_PASSWORD_LENGTH = 8;
+
+/**
+ * Messages are user-facing: the mobile register form renders them per field
+ * and the backend returns them on 400, so both stay in sync from one place.
+ */
 export const registerUserRequestSchema = z
   .object({
-    confirmPassword: z.string().min(8),
-    email: z.email(),
-    firstName: z.string().trim().min(1),
-    lastName: z.string().trim().min(1),
-    password: z.string().min(8),
+    confirmPassword: z.string().min(MIN_PASSWORD_LENGTH),
+    email: z.email("Enter a valid email"),
+    firstName: z.string().trim().min(1, "Name is required"),
+    lastName: z.string().trim().min(1, "Surname is required"),
+    password: z
+      .string()
+      .min(MIN_PASSWORD_LENGTH, "Password must be at least 8 characters"),
   })
   .refine((value) => value.password === value.confirmPassword, {
     message: "Passwords must match",

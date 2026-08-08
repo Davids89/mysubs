@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@subtrack/api-client": "workspace:^",
-    "@subtrack/business-logic": "workspace:^",
     "@subtrack/shared-types": "workspace:^",
     "@subtrack/ui-components": "workspace:^",
     "expo": "latest",

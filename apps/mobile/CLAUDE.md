@@ -1,4 +1,4 @@
-# Mobile AGENTS.md
+# Mobile CLAUDE.md
 
 Mobile-specific conventions for `apps/mobile` and related React Native UI work.
 Read this file before implementing any mobile task.

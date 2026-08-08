@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/mobile",
+  "name": "@subtrack/mobile",
   "main": "expo-router/entry",
   "private": true,
   "scripts": {
@@ -11,10 +11,10 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@mysubs/api-client": "workspace:^",
-    "@mysubs/business-logic": "workspace:^",
-    "@mysubs/shared-types": "workspace:^",
-    "@mysubs/ui-components": "workspace:^",
+    "@subtrack/api-client": "workspace:^",
+    "@subtrack/business-logic": "workspace:^",
+    "@subtrack/shared-types": "workspace:^",
+    "@subtrack/ui-components": "workspace:^",
     "expo": "latest",
     "expo-router": "^56.2.10",
     "expo-secure-store": "^56.0.4",

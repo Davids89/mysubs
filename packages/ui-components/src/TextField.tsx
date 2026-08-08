@@ -18,21 +18,48 @@ export function TextField({ error, label, style, ...props }: Props) {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.label, { color: theme.colors.text }]}>{label}</Text>
+      <Text
+        style={[
+          styles.label,
+          {
+            color: theme.colors.textRole.secondary,
+            fontSize: theme.typography.label.size,
+            fontWeight: theme.typography.label.weight,
+          },
+        ]}
+      >
+        {label}
+      </Text>
       <TextInput
-        placeholderTextColor={theme.colors.mutedText}
+        placeholderTextColor={theme.colors.textRole.muted}
         style={[
           styles.input,
           {
-            borderColor: error ? theme.colors.danger : theme.colors.border,
-            color: theme.colors.text,
+            backgroundColor: theme.colors.surface.subtle,
+            borderColor: error
+              ? theme.colors.border.error
+              : theme.colors.border.default,
+            borderRadius: theme.radius.md,
+            borderWidth: theme.strokeWidth.default,
+            color: theme.colors.textRole.primary,
+            fontSize: theme.typography.bodySmall.size,
+            height: theme.components.input.height,
+            paddingHorizontal: theme.components.input.paddingHorizontal,
           },
           style,
         ]}
         {...props}
       />
       {error ? (
-        <Text style={[styles.error, { color: theme.colors.danger }]}>
+        <Text
+          style={[
+            styles.error,
+            {
+              color: theme.colors.semantic.danger.text,
+              fontSize: theme.typography.bodySmall.size,
+            },
+          ]}
+        >
           {error}
         </Text>
       ) : null}
@@ -45,17 +72,12 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   error: {
-    fontSize: 14,
+    lineHeight: 21,
   },
   input: {
-    borderRadius: 12,
-    borderWidth: 1,
-    fontSize: 16,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
+    paddingVertical: 0,
   },
   label: {
-    fontSize: 14,
-    fontWeight: "600",
+    lineHeight: 14,
   },
 });

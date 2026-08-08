@@ -1,14 +1,35 @@
+type StatChipContent = {
+  label: string;
+  value: string;
+};
+
 type HomeScreenContent = {
   actionLabel: string;
-  eyebrow: string;
+  emptyBody: string;
+  emptyTitle: string;
+  stats: StatChipContent[];
   subtitle: string;
   title: string;
 };
 
 export const useHomeScreen = (): HomeScreenContent => ({
-  actionLabel: "Auth setup comes next",
-  eyebrow: "MySubs mobile",
-  subtitle:
-    "Navigation and theming are ready so US-AUTH-001 can start from a stable app shell.",
-  title: "Track shared subscriptions with less friction",
+  actionLabel: "Add subscription",
+  emptyBody: "Add your first subscription to start managing them.",
+  emptyTitle: "Add your first subscription",
+  stats: [
+    {
+      label: "Monthly",
+      value: "€0",
+    },
+    {
+      label: "Active",
+      value: "0",
+    },
+    {
+      label: "Shared",
+      value: "0",
+    },
+  ],
+  subtitle: "0 active subscriptions",
+  title: "My subscriptions",
 });

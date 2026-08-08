@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "MySubs",
-    "slug": "mysubs",
-    "scheme": "mysubs",
+    "name": "Subtrack",
+    "slug": "subtrack",
+    "scheme": "subtrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "plugins": ["expo-router"],
     "android": {
-      "package": "com.davids89.mysubs"
+      "package": "com.davids89.subtrack"
     }
   }
 }

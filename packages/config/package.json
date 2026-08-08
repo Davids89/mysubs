@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/config",
+  "name": "@subtrack/config",
   "private": true,
   "type": "module",
   "exports": {

@@ -45,6 +45,6 @@ jobs:
 
       - name: Build Android
         run: >
-          pnpm --filter @mysubs/mobile build:android --
+          pnpm --filter @subtrack/mobile build:android --
           --profile ${{ inputs.profile }}
           --non-interactive

@@ -23,13 +23,27 @@ export function Button({ disabled, label, style, ...props }: Props) {
       disabled={disabled}
       style={[
         styles.button,
-        { backgroundColor: theme.colors.primary },
+        {
+          backgroundColor: theme.colors.brand.primary,
+          borderRadius: theme.radius.md,
+          height: theme.components.button.height,
+          paddingHorizontal: theme.components.button.paddingHorizontal,
+        },
         disabled ? styles.disabled : undefined,
         style,
       ]}
       {...props}
     >
-      <Text style={[styles.label, { color: theme.colors.primaryText }]}>
+      <Text
+        style={[
+          styles.label,
+          {
+            color: theme.colors.textRole.inverse,
+            fontSize: theme.typography.body.size,
+            fontWeight: theme.typography.label.weight,
+          },
+        ]}
+      >
         {label}
       </Text>
     </Pressable>
@@ -39,15 +53,12 @@ export function Button({ disabled, label, style, ...props }: Props) {
 const styles = StyleSheet.create({
   button: {
     alignItems: "center",
-    borderRadius: 16,
-    paddingHorizontal: 16,
-    paddingVertical: 14,
+    justifyContent: "center",
   },
   disabled: {
     opacity: 0.6,
   },
   label: {
-    fontSize: 16,
-    fontWeight: "700",
+    lineHeight: 21,
   },
 });

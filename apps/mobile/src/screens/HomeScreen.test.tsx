@@ -3,13 +3,15 @@ import { render } from "@testing-library/react-native";
 import { HomeScreen } from "./HomeScreen";
 
 describe("HomeScreen", () => {
-  it("renders the mobile foundation messaging", () => {
+  it("renders the subscription list foundation", () => {
     const { getByText } = render(<HomeScreen />);
 
-    expect(getByText("MySubs mobile")).toBeTruthy();
+    expect(getByText("My subscriptions")).toBeTruthy();
+    expect(getByText("0 active subscriptions")).toBeTruthy();
+    expect(getByText("Add your first subscription")).toBeTruthy();
     expect(
-      getByText("Track shared subscriptions with less friction"),
+      getByText("Add your first subscription to start managing them."),
     ).toBeTruthy();
-    expect(getByText("Auth setup comes next")).toBeTruthy();
+    expect(getByText("Add subscription")).toBeTruthy();
   });
 });

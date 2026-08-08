@@ -29,7 +29,7 @@ importers:
 
   apps/backend:
     dependencies:
-      '@mysubs/shared-types':
+      '@subtrack/shared-types':
         specifier: workspace:^
         version: link:../../packages/shared-types
       '@prisma/adapter-pg':
@@ -87,16 +87,16 @@ importers:
 
   apps/mobile:
     dependencies:
-      '@mysubs/api-client':
+      '@subtrack/api-client':
         specifier: workspace:^
         version: link:../../packages/api-client
-      '@mysubs/business-logic':
+      '@subtrack/business-logic':
         specifier: workspace:^
         version: link:../../packages/business-logic
-      '@mysubs/shared-types':
+      '@subtrack/shared-types':
         specifier: workspace:^
         version: link:../../packages/shared-types
-      '@mysubs/ui-components':
+      '@subtrack/ui-components':
         specifier: workspace:^
         version: link:../../packages/ui-components
       expo:
@@ -151,7 +151,7 @@ importers:
 
   packages/api-client:
     dependencies:
-      '@mysubs/shared-types':
+      '@subtrack/shared-types':
         specifier: workspace:^
         version: link:../shared-types
     devDependencies:

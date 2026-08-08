@@ -1,4 +1,4 @@
-import { createAuthApiClient } from "@mysubs/api-client";
+import { createAuthApiClient } from "@subtrack/api-client";
 
 const DEFAULT_ANDROID_API_BASE_URL = "http://10.0.2.2:3000";
 

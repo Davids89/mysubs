@@ -12,7 +12,7 @@ permissions:
   packages: write
 
 env:
-  IMAGE_NAME: ghcr.io/davids89/mysubs-backend
+  IMAGE_NAME: ghcr.io/davids89/subtrack-backend
 
 jobs:
   publish:

@@ -2,7 +2,7 @@ import {
   isPasswordLongEnough,
   isValidEmail,
   validatePasswordConfirmation,
-} from "@mysubs/business-logic";
+} from "@subtrack/business-logic";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 

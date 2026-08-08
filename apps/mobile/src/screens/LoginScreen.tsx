@@ -1,4 +1,4 @@
-import { Button, TextField, useTheme } from "@mysubs/ui-components";
+import { Button, TextField, useTheme } from "@subtrack/ui-components";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 import { AuthScreenLayout } from "../components/AuthScreenLayout";
@@ -29,12 +29,22 @@ export function LoginScreen() {
         secureTextEntry
         value={form.password}
       />
-      {error ? <Text style={{ color: theme.colors.danger }}>{error}</Text> : null}
+      {error ? (
+        <Text style={{ color: theme.colors.semantic.danger.text }}>{error}</Text>
+      ) : null}
       <Button disabled={isSubmitting} label="Entrar" onPress={submit} />
       <View style={styles.footer}>
         <Text style={{ color: theme.colors.mutedText }}>¿No tienes cuenta?</Text>
         <Pressable onPress={goToRegister}>
-          <Text style={[styles.link, { color: theme.colors.primary }]}>
+          <Text
+            style={[
+              styles.link,
+              {
+                color: theme.colors.brand.dark,
+                fontWeight: theme.typography.label.weight,
+              },
+            ]}
+          >
             Regístrate gratis
           </Text>
         </Pressable>
@@ -48,7 +58,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 4,
   },
-  link: {
-    fontWeight: "700",
-  },
+  link: {},
 });

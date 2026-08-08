@@ -17,7 +17,7 @@ Gather context first:
 4. `git log --oneline <base>..HEAD`
 5. `git diff --stat <base>...HEAD`
 6. `git diff <base>...HEAD`
-7. If an issue is referenced, fetch it with `gh issue view <number> --repo Davids89/mysubs`.
+7. If an issue is referenced, fetch it with `gh issue view <number> --repo Davids89/subtrack`.
 
 Default `<base>` to the PR base branch when a PR exists. If there is no PR, default to `origin/master` unless the current branch tracks a different base or the user says otherwise.
 

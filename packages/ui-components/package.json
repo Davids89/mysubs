@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/ui-components",
+  "name": "@subtrack/ui-components",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",

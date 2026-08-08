@@ -1,5 +1,5 @@
 {
-  "name": "@mysubs/shared-types",
+  "name": "@subtrack/shared-types",
   "private": true,
   "type": "module",
   "main": "./dist/index.js",

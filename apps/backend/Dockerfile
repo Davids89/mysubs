@@ -19,6 +19,9 @@ RUN pnpm install --filter @subtrack/backend... --frozen-lockfile
 COPY apps/backend apps/backend
 COPY packages packages
 
+RUN DATABASE_URL="postgresql://subtrack:subtrack@localhost:5432/subtrack?schema=public" \
+  pnpm --filter @subtrack/backend db:generate
+
 EXPOSE 3000
 
 CMD ["pnpm", "--filter", "@subtrack/backend", "dev"]

@@ -1,8 +1,4 @@
-import {
-  isPasswordLongEnough,
-  isValidEmail,
-  validatePasswordConfirmation,
-} from "@subtrack/business-logic";
+import { registerUserRequestSchema } from "@subtrack/shared-types";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 
@@ -78,17 +74,18 @@ export const useRegisterScreen = () => {
   };
 };
 
-const validateForm = (form: RegisterForm): RegisterErrors => ({
-  ...(!form.firstName.trim() ? { firstName: "Name is required" } : {}),
-  ...(!form.lastName.trim() ? { lastName: "Surname is required" } : {}),
-  ...(!isValidEmail(form.email) ? { email: "Enter a valid email" } : {}),
-  ...(!isPasswordLongEnough(form.password)
-    ? { password: "Password must be at least 8 characters" }
-    : {}),
-  ...(!validatePasswordConfirmation(form)
-    ? { confirmPassword: "Passwords must match" }
-    : {}),
-});
+const validateForm = (form: RegisterForm): RegisterErrors => {
+  const result = registerUserRequestSchema.safeParse(form);
+
+  if (result.success) {
+    return {};
+  }
+
+  return result.error.issues.reduce<RegisterErrors>((errors, issue) => {
+    const field = issue.path[0] as keyof RegisterForm;
+    return field in errors ? errors : { ...errors, [field]: issue.message };
+  }, {});
+};
 
 const getErrorMessage = (error: unknown): string =>
   error instanceof Error ? error.message : "Could not create account";

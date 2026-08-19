@@ -85,7 +85,7 @@ Focus on reviewer value, not a file-by-file dump:
 
 ## Project-Specific Checks
 
-- For mobile work, mention Expo Router, `apps/mobile/AGENTS.md`, EAS/Expo implications, and emulator/manual verification when relevant.
+- For mobile work, mention Expo Router, `apps/mobile/CLAUDE.md`, EAS/Expo implications, and emulator/manual verification when relevant.
 - For backend work, mention CQRS flow, Prisma migrations, Docker compose, and API routes when relevant.
 - For CI/CD work, mention GitHub Actions workflow names and required repository secrets.
 - Do not claim tests were run unless there is evidence from the conversation or command output.

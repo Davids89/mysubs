@@ -6,17 +6,24 @@ const globalForPrisma = globalThis as typeof globalThis & {
   prismaClient?: PrismaClient;
 };
 
-const databaseUrl = process.env.DATABASE_URL;
+/**
+ * Created on first use rather than at import time, so importing a module that
+ * touches the database does not require DATABASE_URL to be set.
+ */
+export const getPrismaClient = (): PrismaClient => {
+  if (globalForPrisma.prismaClient) {
+    return globalForPrisma.prismaClient;
+  }
 
-if (!databaseUrl) {
-  throw new Error("DATABASE_URL is required to initialize Prisma");
-}
+  const connectionString = process.env.DATABASE_URL;
 
-const adapter = new PrismaPg({ connectionString: databaseUrl });
+  if (!connectionString) {
+    throw new Error("DATABASE_URL is required to initialize Prisma");
+  }
 
-export const prismaClient =
-  globalForPrisma.prismaClient ?? new PrismaClient({ adapter });
+  globalForPrisma.prismaClient = new PrismaClient({
+    adapter: new PrismaPg({ connectionString }),
+  });
 
-if (process.env.NODE_ENV !== "production") {
-  globalForPrisma.prismaClient = prismaClient;
-}
+  return globalForPrisma.prismaClient;
+};

@@ -13,8 +13,8 @@ Read these before validating or fixing:
 
 1. `docs/subtrack-design-system.md` — colors, typography, spacing, components, copy rules, screen structure
 2. `packages/ui-components/src/theme/tokens.ts` — implemented React Native token values
-3. `apps/mobile/AGENTS.md` — mobile screen/hook/component conventions
-4. `AGENTS.md` — design system placement rules
+3. `apps/mobile/CLAUDE.md` — mobile screen/hook/component conventions
+4. `CLAUDE.md` — design system placement rules
 
 Do not invent colors, radii, weights, or component specs outside these files.
 

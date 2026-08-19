@@ -7,3 +7,5 @@ apps/mobile/.expo/
 .env.*
 !.env.example
 apps/backend/src/generated/prisma/
+
+.pnpm-store/

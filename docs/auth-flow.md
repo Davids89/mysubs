@@ -1,26 +1,26 @@
 # Authentication Flow
 
-This document explains the current Subtrack authentication flow for new teammates. It covers how registration and login move through the mobile app, shared packages, backend CQRS handlers, and the database.
+This document explains the current Subtrack authentication flow for new teammates. It covers how registration and login move through the mobile app, shared packages, backend services, and the database.
+
+For the wider system shape and the reasoning behind the current layering, see [architecture.md](./architecture.md).
 
 ## Big Picture
 
 Authentication is split across the monorepo so each layer has one clear responsibility:
 
-- `packages/shared-types` defines the request and response contracts with Zod schemas.
-- `packages/business-logic` owns pure validation helpers used by the mobile form.
+- `packages/shared-types` defines the request and response contracts with Zod schemas, used by both the mobile form and the backend.
 - `packages/api-client` wraps the HTTP calls and validates API responses.
 - `apps/mobile` renders auth screens, stores the issued token, and navigates after auth.
-- `apps/backend` validates incoming requests, executes CQRS handlers, hashes passwords, issues JWTs, and persists users with Prisma.
+- `apps/backend` validates incoming requests, runs the auth service, hashes passwords, issues JWTs, and persists users with Prisma.
 
 ```mermaid
 flowchart LR
   Mobile[Expo mobile app] --> ApiClient["@subtrack/api-client"]
   ApiClient --> Backend["Express /auth routes"]
   Backend --> Shared["@subtrack/shared-types Zod schemas"]
-  Backend --> Handler["CQRS command handlers"]
-  Handler --> Repo["Auth repository"]
-  Handler --> Security["bcrypt + JWT services"]
-  Repo --> DB[(PostgreSQL users table)]
+  Backend --> Service["auth.service.ts"]
+  Service --> Security["bcrypt + jsonwebtoken"]
+  Service --> DB[(PostgreSQL users table)]
   Mobile --> SecureStore["Expo SecureStore token cache"]
 ```
 
@@ -92,7 +92,7 @@ flowchart TD
 `RegisterScreen` is also presentational. State, validation, API calls, and navigation live in `useRegisterScreen`.
 
 1. The user enters name, surname, email, password, and confirmation.
-2. The hook validates email, password length, and password confirmation with `@subtrack/business-logic`.
+2. The hook validates the form with `registerUserRequestSchema` from `@subtrack/shared-types`.
 3. If validation passes, it calls `authApiClient.register(form)`.
 4. On success, the token is stored through `AuthSessionProvider.signIn(token)`.
 5. The app navigates to `/(auth)/registration-success` with the user's first name.
@@ -105,43 +105,41 @@ The backend exposes two auth routes under `/auth`:
 - `POST /auth/register`
 - `POST /auth/login`
 
-The router lives in `apps/backend/src/modules/auth/auth.controller.ts`. Controllers only validate and orchestrate. Use-case logic stays in command handlers.
+The router lives in `apps/backend/src/modules/auth/auth.controller.ts`. Controllers only validate and orchestrate. Use-case logic stays in `auth.service.ts`.
 
 ```mermaid
 sequenceDiagram
   participant Client as Mobile/API client
   participant Controller as Auth controller
   participant Schema as Zod request schema
-  participant Handler as Command handler
-  participant Repo as Auth repository
-  participant Security as bcrypt/JWT services
+  participant Service as auth.service
+  participant Security as bcrypt/jsonwebtoken
   participant DB as PostgreSQL
 
   Client->>Controller: POST /auth/register or /auth/login
   Controller->>Schema: parse request body
-  Schema-->>Controller: typed command
-  Controller->>Handler: execute(command)
-  Handler->>Repo: find or create user
-  Repo->>DB: Prisma query
-  Handler->>Security: hash/verify password, issue JWT
-  Handler-->>Controller: AuthResponse
+  Schema-->>Controller: typed request
+  Controller->>Service: registerUser / loginUser
+  Service->>DB: Prisma query via getPrismaClient()
+  Service->>Security: hash/verify password, issue JWT
+  Service-->>Controller: AuthResponse
   Controller-->>Client: 200/201 JSON
 ```
 
-### Register Handler
+### Register
 
-`RegisterUserHandler` performs the registration use case:
+`registerUser` in `auth.service.ts` performs the registration use case:
 
-1. Checks whether the email is already taken with `repository.findUserByEmail`.
+1. Checks whether the email is already taken with `user.findUnique`.
 2. Throws `EmailAlreadyExistsError` if the email is unavailable.
-3. Hashes the password with `BcryptPasswordHasher`.
-4. Creates the user through `PrismaAuthRepository`.
-5. Issues a JWT with `JwtTokenIssuer`.
+3. Hashes the password with bcrypt (12 salt rounds).
+4. Creates the user with `user.create`.
+5. Issues a JWT.
 6. Returns the token and public user fields.
 
 ```mermaid
 flowchart TD
-  Register["Register command"] --> CheckEmail["Find user by email"]
+  Register["POST /auth/register"] --> CheckEmail["Find user by email"]
   CheckEmail --> Exists{"User exists?"}
   Exists -- yes --> EmailError["EmailAlreadyExistsError"]
   Exists -- no --> Hash["Hash password with bcrypt"]
@@ -150,9 +148,9 @@ flowchart TD
   IssueToken --> Response["Return AuthResponse"]
 ```
 
-### Login Handler
+### Login
 
-`LoginUserHandler` performs the login use case:
+`loginUser` in `auth.service.ts` performs the login use case:
 
 1. Finds the user by email.
 2. Throws `InvalidCredentialsError` if no user exists.
@@ -163,7 +161,7 @@ flowchart TD
 
 ```mermaid
 flowchart TD
-  Login["Login command"] --> FindUser["Find user by email"]
+  Login["POST /auth/login"] --> FindUser["Find user by email"]
   FindUser --> Found{"User found?"}
   Found -- no --> Invalid["InvalidCredentialsError"]
   Found -- yes --> Verify["Verify password with bcrypt"]
@@ -175,14 +173,14 @@ flowchart TD
 
 ## Token Behavior
 
-Tokens are issued by `JwtTokenIssuer`:
+Tokens are issued by `auth.service.ts`:
 
 - Algorithm defaults to the `jsonwebtoken` library default.
 - Subject is the user id.
 - Payload includes `email`, `firstName`, and `lastName`.
 - Expiration is `1h`.
 - Secret comes from `JWT_SECRET`.
-- In production, missing `JWT_SECRET` fails backend startup.
+- In production, a missing `JWT_SECRET` throws when a token is issued.
 - In development, the backend falls back to `development-jwt-secret`.
 
 On mobile, the token is stored in Expo SecureStore under `subtrack.authToken`.
@@ -227,8 +225,9 @@ The database column names are mapped to snake_case where needed, for example `fi
 
 The current branch implements the first auth slice. A few important pieces are not in place yet:
 
-- There is no backend middleware yet that validates JWTs on protected routes.
-- The mobile `/home` route exists, but route guarding based on `AuthSessionProvider.token` is not complete.
+- There is no backend middleware yet that validates JWTs on protected routes (`US-AUTH-003`).
+- The mobile `/home` route exists, but route guarding based on `AuthSessionProvider.token` is not complete (`US-AUTH-003`).
+- `packages/api-client` does not attach the token to requests or handle `401` (`US-AUTH-003`).
 - There is no refresh-token flow; JWTs expire after one hour.
-- Logout exists in the session provider, but no user-facing logout screen action is currently wired.
+- Logout exists in the session provider, but no user-facing logout action is wired (`US-AUTH-002`).
 

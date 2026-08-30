@@ -17,7 +17,7 @@ export function RegisterScreen() {
   } = useRegisterScreen();
 
   return (
-    <AuthScreenLayout subtitle="Solo te llevará un momento" title="Crea tu cuenta">
+    <AuthScreenLayout subtitle="It only takes a moment" title="Create your account">
       <Pressable onPress={goBack}>
         <Text
           style={[
@@ -28,35 +28,35 @@ export function RegisterScreen() {
             },
           ]}
         >
-          Volver
+          Back
         </Text>
       </Pressable>
       <TextField
         error={errors.firstName}
-        label="Nombre"
+        label="First name"
         onChangeText={(value) => updateField("firstName", value)}
         placeholder="Ana"
         value={form.firstName}
       />
       <TextField
         error={errors.lastName}
-        label="Apellido"
+        label="Last name"
         onChangeText={(value) => updateField("lastName", value)}
-        placeholder="García"
+        placeholder="Garcia"
         value={form.lastName}
       />
       <TextField
         autoCapitalize="none"
         error={errors.email}
         keyboardType="email-address"
-        label="Correo electrónico"
+        label="Email"
         onChangeText={(value) => updateField("email", value)}
-        placeholder="ana@correo.com"
+        placeholder="ana@email.com"
         value={form.email}
       />
       <TextField
         error={errors.password}
-        label="Contraseña"
+        label="Password"
         onChangeText={(value) => updateField("password", value)}
         placeholder="••••••••"
         secureTextEntry
@@ -64,23 +64,25 @@ export function RegisterScreen() {
       />
       <TextField
         error={errors.confirmPassword}
-        label="Confirmar contraseña"
+        label="Confirm password"
         onChangeText={(value) => updateField("confirmPassword", value)}
         placeholder="••••••••"
         secureTextEntry
         value={form.confirmPassword}
       />
       <Text style={{ color: theme.colors.mutedText }}>
-        Al registrarte aceptas los términos de uso y la política de privacidad
+        By signing up you accept the terms of use and the privacy policy
       </Text>
       {errors.form ? (
         <Text style={{ color: theme.colors.semantic.danger.text }}>
           {errors.form}
         </Text>
       ) : null}
-      <Button disabled={isSubmitting} label="Crear cuenta" onPress={submit} />
+      <Button disabled={isSubmitting} label="Create account" onPress={submit} />
       <View style={styles.footer}>
-        <Text style={{ color: theme.colors.mutedText }}>¿Ya tienes cuenta?</Text>
+        <Text style={{ color: theme.colors.mutedText }}>
+          Already have an account?
+        </Text>
         <Pressable onPress={goToLogin}>
           <Text
             style={[
@@ -91,7 +93,7 @@ export function RegisterScreen() {
               },
             ]}
           >
-            Inicia sesión
+            Sign in
           </Text>
         </Pressable>
       </View>

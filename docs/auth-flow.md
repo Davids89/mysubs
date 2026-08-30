@@ -85,7 +85,7 @@ flowchart TD
 2. `useLoginScreen.submit()` calls `authApiClient.login(form)`.
 3. On success, `AuthSessionProvider.signIn(token)` writes the token to `SecureStore`.
 4. The app navigates to `/home`.
-5. On failure, the screen shows `Invalid email or password`.
+5. On failure, the screen shows `Email or password incorrect`.
 
 ### Registration
 
@@ -226,8 +226,7 @@ The database column names are mapped to snake_case where needed, for example `fi
 The current branch implements the first auth slice. A few important pieces are not in place yet:
 
 - There is no backend middleware yet that validates JWTs on protected routes (`US-AUTH-003`).
-- The mobile `/home` route exists, but route guarding based on `AuthSessionProvider.token` is not complete (`US-AUTH-003`).
+- The root route redirects on `AuthSessionProvider.token`, but `/home` itself is not guarded against a missing session (`US-AUTH-003`).
 - `packages/api-client` does not attach the token to requests or handle `401` (`US-AUTH-003`).
 - There is no refresh-token flow; JWTs expire after one hour.
-- Logout exists in the session provider, but no user-facing logout action is wired (`US-AUTH-002`).
 

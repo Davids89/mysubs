@@ -1,5 +1,5 @@
 import { useTheme } from "@subtrack/ui-components";
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 import { useHomeScreen } from "../hooks/useHomeScreen";
@@ -26,30 +26,43 @@ export function HomeScreen() {
           },
         ]}
       >
-        <View style={styles.titleGroup}>
-          <Text
-            style={[
-              styles.title,
-              {
-                color: theme.typography.title.color,
-                fontSize: theme.typography.title.size,
-                fontWeight: theme.typography.title.weight,
-              },
-            ]}
-          >
-            {content.title}
-          </Text>
-          <Text
-            style={[
-              styles.subtitle,
-              {
-                color: theme.colors.textRole.muted,
-                fontSize: theme.typography.caption.size,
-              },
-            ]}
-          >
-            {content.subtitle}
-          </Text>
+        <View style={styles.titleRow}>
+          <View style={styles.titleGroup}>
+            <Text
+              style={[
+                styles.title,
+                {
+                  color: theme.typography.title.color,
+                  fontSize: theme.typography.title.size,
+                  fontWeight: theme.typography.title.weight,
+                },
+              ]}
+            >
+              {content.title}
+            </Text>
+            <Text
+              style={[
+                styles.subtitle,
+                {
+                  color: theme.colors.textRole.muted,
+                  fontSize: theme.typography.caption.size,
+                },
+              ]}
+            >
+              {content.subtitle}
+            </Text>
+          </View>
+          <Pressable accessibilityRole="button" onPress={content.signOut}>
+            <Text
+              style={{
+                color: theme.colors.brand.dark,
+                fontSize: theme.typography.bodySmall.size,
+                fontWeight: theme.typography.label.weight,
+              }}
+            >
+              {content.signOutLabel}
+            </Text>
+          </Pressable>
         </View>
         <View style={[styles.statRow, { gap: theme.spacing.sm }]}>
           {content.stats.map((stat) => (
@@ -266,5 +279,10 @@ const styles = StyleSheet.create({
   },
   titleGroup: {
     gap: 4,
+  },
+  titleRow: {
+    alignItems: "flex-start",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
 });

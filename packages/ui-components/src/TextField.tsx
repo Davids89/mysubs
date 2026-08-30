@@ -3,37 +3,40 @@ import {
   Text,
   TextInput,
   View,
+  type StyleProp,
   type TextInputProps,
+  type ViewStyle,
 } from "react-native";
+import type { ReactNode } from "react";
 
 import { useTheme } from "./theme/ThemeProvider.js";
 
-type Props = TextInputProps & {
+type Props = Omit<TextInputProps, "style"> & {
   error?: string;
+  /** Rendered inside the field, before the input. */
+  icon?: ReactNode;
   label: string;
+  style?: StyleProp<ViewStyle>;
 };
 
-export function TextField({ error, label, style, ...props }: Props) {
+export function TextField({ error, icon, label, style, ...props }: Props) {
   const theme = useTheme();
+  const isDisabled = props.editable === false;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Text
-        style={[
-          styles.label,
-          {
-            color: theme.colors.textRole.secondary,
-            fontSize: theme.typography.label.size,
-            fontWeight: theme.typography.label.weight,
-          },
-        ]}
+        style={{
+          color: theme.colors.textRole.secondary,
+          fontSize: theme.typography.label.size,
+          fontWeight: theme.typography.label.weight,
+        }}
       >
         {label}
       </Text>
-      <TextInput
-        placeholderTextColor={theme.colors.textRole.muted}
+      <View
         style={[
-          styles.input,
+          styles.field,
           {
             backgroundColor: theme.colors.surface.subtle,
             borderColor: error
@@ -41,24 +44,32 @@ export function TextField({ error, label, style, ...props }: Props) {
               : theme.colors.border.default,
             borderRadius: theme.radius.md,
             borderWidth: theme.strokeWidth.default,
-            color: theme.colors.textRole.primary,
-            fontSize: theme.typography.bodySmall.size,
+            gap: theme.spacing.sm,
             height: theme.components.input.height,
             paddingHorizontal: theme.components.input.paddingHorizontal,
           },
-          style,
+          isDisabled ? styles.disabled : undefined,
         ]}
-        {...props}
-      />
-      {error ? (
-        <Text
+      >
+        {icon}
+        <TextInput
+          placeholderTextColor={theme.colors.textRole.muted}
           style={[
-            styles.error,
+            styles.input,
             {
-              color: theme.colors.semantic.danger.text,
+              color: theme.colors.textRole.primary,
               fontSize: theme.typography.bodySmall.size,
             },
           ]}
+          {...props}
+        />
+      </View>
+      {error ? (
+        <Text
+          style={{
+            color: theme.colors.semantic.danger.text,
+            fontSize: theme.typography.bodySmall.size,
+          }}
         >
           {error}
         </Text>
@@ -71,13 +82,15 @@ const styles = StyleSheet.create({
   container: {
     gap: 6,
   },
-  error: {
-    lineHeight: 21,
+  disabled: {
+    opacity: 0.6,
+  },
+  field: {
+    alignItems: "center",
+    flexDirection: "row",
   },
   input: {
+    flex: 1,
     paddingVertical: 0,
-  },
-  label: {
-    lineHeight: 14,
   },
 });

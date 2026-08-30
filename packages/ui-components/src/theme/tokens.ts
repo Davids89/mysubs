@@ -57,6 +57,8 @@ export type Theme = {
     };
     button: {
       height: number;
+      largeHeight: number;
+      largePaddingHorizontal: number;
       paddingHorizontal: number;
       smallHeight: number;
       smallPaddingHorizontal: number;
@@ -167,6 +169,8 @@ export const lightTheme: Theme = {
     },
     button: {
       height: 46,
+      largeHeight: 54,
+      largePaddingHorizontal: 28,
       paddingHorizontal: 24,
       smallHeight: 34,
       smallPaddingHorizontal: 14,

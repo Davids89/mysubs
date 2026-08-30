@@ -72,6 +72,7 @@ Backend database scripts live in `apps/backend/package.json`: `db:migrate`,
 - `docs/architecture.md` — diagrams and why the structure is this small
 - `docs/auth-flow.md` — registration and login end to end
 - `docs/subtrack-design-system.md` — colors, typography, components
+- `docs/component-guidelines.md` — how we build components, and when not to
 - `CLAUDE.md` — conventions AI agents (and humans) follow here
 
 ## License

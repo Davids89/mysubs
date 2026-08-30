@@ -85,7 +85,7 @@ flowchart TD
 2. `useLoginScreen.submit()` calls `authApiClient.login(form)`.
 3. On success, `AuthSessionProvider.signIn(token)` writes the token to `SecureStore`.
 4. The app navigates to `/home`.
-5. On failure, the screen shows `Invalid email or password`.
+5. On failure, the screen shows `Email or password incorrect`.
 
 ### Registration
 

@@ -123,7 +123,7 @@ describe("auth routes", () => {
     expect(response.status).toBe(401);
     expect(response.body).toEqual({
       code: "INVALID_CREDENTIALS",
-      message: "Invalid email or password",
+      message: "Email or password incorrect",
     });
   });
 

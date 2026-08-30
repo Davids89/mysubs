@@ -6,35 +6,58 @@ import { useLoginScreen } from "../hooks/useLoginScreen";
 
 export function LoginScreen() {
   const theme = useTheme();
-  const { error, form, goToRegister, isSubmitting, submit, updateField } =
-    useLoginScreen();
+  const {
+    error,
+    form,
+    forgotPassword,
+    goToRegister,
+    isSubmitting,
+    notice,
+    submit,
+    updateField,
+  } = useLoginScreen();
 
   return (
     <AuthScreenLayout
-      subtitle="Gestiona tus suscripciones"
-      title="Inicia sesión"
+      subtitle="Manage your subscriptions"
+      title="Sign in"
     >
       <TextField
         autoCapitalize="none"
         keyboardType="email-address"
-        label="Correo electrónico"
+        label="Email"
         onChangeText={(value) => updateField("email", value)}
-        placeholder="tu@correo.com"
+        placeholder="you@email.com"
         value={form.email}
       />
       <TextField
-        label="Contraseña"
+        label="Password"
         onChangeText={(value) => updateField("password", value)}
         placeholder="••••••••"
         secureTextEntry
         value={form.password}
       />
+      <Pressable onPress={forgotPassword} style={styles.forgotPassword}>
+        <Text
+          style={{
+            color: theme.colors.brand.dark,
+            fontWeight: theme.typography.label.weight,
+          }}
+        >
+          Forgot your password?
+        </Text>
+      </Pressable>
+      {notice ? (
+        <Text style={{ color: theme.colors.mutedText }}>{notice}</Text>
+      ) : null}
       {error ? (
         <Text style={{ color: theme.colors.semantic.danger.text }}>{error}</Text>
       ) : null}
-      <Button disabled={isSubmitting} label="Entrar" onPress={submit} />
+      <Button disabled={isSubmitting} label="Sign in" onPress={submit} />
       <View style={styles.footer}>
-        <Text style={{ color: theme.colors.mutedText }}>¿No tienes cuenta?</Text>
+        <Text style={{ color: theme.colors.mutedText }}>
+          Don&apos;t have an account?
+        </Text>
         <Pressable onPress={goToRegister}>
           <Text
             style={[
@@ -45,7 +68,7 @@ export function LoginScreen() {
               },
             ]}
           >
-            Regístrate gratis
+            Sign up for free
           </Text>
         </Pressable>
       </View>
@@ -57,6 +80,9 @@ const styles = StyleSheet.create({
   footer: {
     alignItems: "center",
     gap: 4,
+  },
+  forgotPassword: {
+    alignSelf: "flex-end",
   },
   link: {},
 });

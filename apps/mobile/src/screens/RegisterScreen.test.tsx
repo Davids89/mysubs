@@ -24,10 +24,10 @@ describe("RegisterScreen", () => {
   it("renders the registration form fields", () => {
     const { getByText } = render(<RegisterScreen />);
 
-    expect(getByText("Crea tu cuenta")).toBeTruthy();
-    expect(getByText("Nombre")).toBeTruthy();
-    expect(getByText("Apellido")).toBeTruthy();
-    expect(getByText("Correo electrónico")).toBeTruthy();
-    expect(getByText("Confirmar contraseña")).toBeTruthy();
+    expect(getByText("Create your account")).toBeTruthy();
+    expect(getByText("First name")).toBeTruthy();
+    expect(getByText("Last name")).toBeTruthy();
+    expect(getByText("Email")).toBeTruthy();
+    expect(getByText("Confirm password")).toBeTruthy();
   });
 });

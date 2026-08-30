@@ -5,10 +5,10 @@ import { RegistrationSuccessScreen } from "./RegistrationSuccessScreen";
 jest.mock("../hooks/useRegistrationSuccessScreen", () => ({
   useRegistrationSuccessScreen: () => ({
     content: {
-      actionLabel: "Ir a mis suscripciones",
+      actionLabel: "Go to my subscriptions",
       subtitle:
-        "Bienvenida a Subtrack, Ana. Ya puedes empezar a gestionar tus suscripciones.",
-      title: "Cuenta creada",
+        "Welcome to Subtrack, Ana. You can start managing your subscriptions now.",
+      title: "Account created",
     },
     goToHome: jest.fn(),
   }),
@@ -18,12 +18,12 @@ describe("RegistrationSuccessScreen", () => {
   it("renders the account created message", () => {
     const { getByText } = render(<RegistrationSuccessScreen />);
 
-    expect(getByText("Cuenta creada")).toBeTruthy();
+    expect(getByText("Account created")).toBeTruthy();
     expect(
       getByText(
-        "Bienvenida a Subtrack, Ana. Ya puedes empezar a gestionar tus suscripciones.",
+        "Welcome to Subtrack, Ana. You can start managing your subscriptions now.",
       ),
     ).toBeTruthy();
-    expect(getByText("Ir a mis suscripciones")).toBeTruthy();
+    expect(getByText("Go to my subscriptions")).toBeTruthy();
   });
 });

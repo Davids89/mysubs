@@ -12,9 +12,9 @@ export const useRegistrationSuccessScreen = () => {
   const displayName = firstName ?? "Subtrack";
 
   const content: RegistrationSuccessContent = {
-    actionLabel: "Ir a mis suscripciones",
-    subtitle: `Bienvenida a Subtrack, ${displayName}. Ya puedes empezar a gestionar tus suscripciones.`,
-    title: "Cuenta creada",
+    actionLabel: "Go to my subscriptions",
+    subtitle: `Welcome to Subtrack, ${displayName}. You can start managing your subscriptions now.`,
+    title: "Account created",
   };
 
   return {

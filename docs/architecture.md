@@ -191,8 +191,8 @@ everything is wired:
   every route is public. (`US-AUTH-003`)
 - **No token on outgoing requests.** `api-client` sends no `Authorization`
   header and does not handle `401`. (`US-AUTH-003`)
-- **No route guard on mobile.** `app/index.tsx` redirects to login
-  unconditionally, ignoring an existing session. (`US-AUTH-003`)
+- **Partial route guard on mobile.** `app/index.tsx` redirects on the stored
+  session, but `/home` itself is not guarded. (`US-AUTH-003`)
 - **The Prisma schema and the backlog disagree** on whether a subscription
   belongs to one user or is shared many-to-many, and the model has no `cost`,
   `frequency`, or tags. (`TECH-001`)

@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react-native";
 
-import HomeRoute from "./home";
+import HomeRoute from "../../app/home";
 
 const mockSession = jest.fn();
 
-jest.mock("../src/auth/AuthSessionProvider", () => ({
+jest.mock("../auth/AuthSessionProvider", () => ({
   useAuthSession: () => mockSession(),
 }));
 
@@ -12,7 +12,7 @@ jest.mock("expo-router", () => ({
   Redirect: ({ href }: { href: string }) => `redirect:${href}`,
 }));
 
-jest.mock("../src/screens/HomeScreen", () => ({
+jest.mock("../screens/HomeScreen", () => ({
   HomeScreen: () => "home-screen",
 }));
 

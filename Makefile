@@ -31,6 +31,7 @@ backend-dev:
 	$(PNPM) --filter @subtrack/backend dev
 
 storybook:
+	@fuser -k 6006/tcp 2>/dev/null || true
 	$(PNPM) --filter @subtrack/ui-components storybook
 
 mobile-android:

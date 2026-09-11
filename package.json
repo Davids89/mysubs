@@ -4,10 +4,12 @@
   "packageManager": "pnpm@9.15.4",
   "scripts": {
     "build": "turbo build",
+    "build-storybook": "turbo build-storybook",
     "dev": "turbo dev",
     "docker:down": "docker compose down",
     "docker:up": "docker compose up --build",
     "lint": "turbo lint",
+    "storybook": "turbo storybook",
     "test": "turbo test",
     "test:backend": "pnpm --filter @subtrack/backend test",
     "typecheck": "turbo typecheck"

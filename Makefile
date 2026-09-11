@@ -1,7 +1,7 @@
 PNPM ?= npx pnpm@latest
 ANDROID_SDK ?= $(HOME)/Android/Sdk
 
-.PHONY: help install dev backend-dev mobile-android up upd down db-seed db-shell test test-backend build clean
+.PHONY: help install dev backend-dev mobile-android storybook up upd down db-seed db-shell test test-backend build clean
 
 help:
 	@echo "Available commands:"
@@ -9,6 +9,7 @@ help:
 	@echo "  make dev           Start all dev tasks with Turborepo"
 	@echo "  make backend-dev   Start only the backend locally"
 	@echo "  make mobile-android Launch the mobile app in the Android emulator"
+	@echo "  make storybook     Open the component library at http://localhost:6006"
 	@echo "  make up            Start the app with Docker Compose"
 	@echo "  make upd           Start detached, then apply migrations and seed"
 	@echo "  make down          Stop Docker Compose services"
@@ -28,6 +29,9 @@ dev:
 
 backend-dev:
 	$(PNPM) --filter @subtrack/backend dev
+
+storybook:
+	$(PNPM) --filter @subtrack/ui-components storybook
 
 mobile-android:
 	ANDROID_HOME="$(ANDROID_SDK)" \
@@ -62,4 +66,4 @@ build:
 	$(PNPM) build
 
 clean:
-	rm -rf .turbo apps/backend/dist packages/*/dist
+	rm -rf .turbo apps/backend/dist packages/*/dist packages/ui-components/storybook-static

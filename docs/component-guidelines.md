@@ -61,15 +61,17 @@ One component, one file, flat in `src/`. No per-component folders, no
 public surface — if it is not exported there, it does not exist.
 
 ```
-packages/ui-components/src/
-├── Alert.tsx
-├── Badge.tsx
-├── Button.tsx
-├── ...
-├── theme/
-│   ├── ThemeProvider.tsx
-│   └── tokens.ts
-└── index.ts
+packages/ui-components/
+├── .storybook/          # main.ts + preview.tsx, see §8
+└── src/
+    ├── Alert.tsx
+    ├── Button.tsx
+    ├── Button.stories.tsx
+    ├── ...
+    ├── theme/
+    │   ├── ThemeProvider.tsx
+    │   └── tokens.ts
+    └── index.ts
 ```
 
 The shape every component follows:
@@ -220,7 +222,60 @@ exactly the change we want to be easy.
 
 ---
 
-## 8. Marking deliberate shortcuts
+## 8. Storybook
+
+Every component is documented in a story next to it: `Button.tsx` →
+`Button.stories.tsx`. `make storybook` (or
+`pnpm --filter @subtrack/ui-components storybook`) opens it on
+http://localhost:6006; `master` builds and publishes to GitHub Pages through
+`.github/workflows/storybook.yml`.
+
+It runs on `@storybook/react-native-web-vite`, so the components render in the
+browser through `react-native-web`. Close enough for props, variants and copy;
+it is **not** a device. Anything touching native modules, gestures or platform
+behaviour still gets checked in the app.
+
+The shape every story follows:
+
+```tsx
+const meta = {
+  argTypes: {
+    variant: { control: "select", options: ["primary", "secondary"] },
+  },
+  args: { label: "Add subscription", onPress: fn() },
+  component: Button,
+  tags: ["autodocs"],
+  title: "Components/Button",
+} satisfies Meta<typeof Button>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {};
+export const Secondary: Story = { args: { variant: "secondary" } };
+```
+
+- **One story per variant and per state**, named after it. `Loading`,
+  `Disabled` and `WithError` are the ones people come looking for.
+- **`argTypes` for every string union** — that is what turns a variant into a
+  control the designer can play with.
+- **`tags: ["autodocs"]`** generates the docs page with the props table and the
+  usage snippet. There is no hand-written MDX.
+- **`fn()` from `storybook/test` for callbacks**, so presses show up in the
+  Actions panel instead of doing nothing.
+- **Components that own no state** (`Modal.visible`, `Select.value`) get a
+  `render` in the meta that holds it. Keep it to `useState`.
+- Colors in a story come from `lightTheme`, same rule as §5.
+
+The `a11y` addon runs axe on every story; check its panel before opening the
+PR. Dark mode has no toolbar switch because `tokens.ts` only defines
+`lightTheme` — the `ThemeProvider` decorator in `.storybook/preview.tsx` takes a
+`theme` prop, so a switch is a few lines away once a dark theme exists.
+
+---
+
+## 9. Marking deliberate shortcuts
 
 When we ship the smaller version on purpose and it has a known ceiling, say so
 in a comment: what the ceiling is, and what replaces it.
@@ -236,7 +291,7 @@ Both are findable with `grep -rn "ponytail:"` when it is time to upgrade.
 
 ---
 
-## 9. Checklist before opening the PR
+## 10. Checklist before opening the PR
 
 - [ ] The design system defines this component, or a second screen needs it.
 - [ ] No literal colors, sizes, radii, or spacing — tokens only.
@@ -245,6 +300,7 @@ Both are findable with `grep -rn "ponytail:"` when it is time to upgrade.
 - [ ] Variants resolved in a private function, not in JSX.
 - [ ] Accessibility role, state, and labels are set.
 - [ ] Exported from `src/index.ts`.
+- [ ] Has a `.stories.tsx` covering every variant and state.
 - [ ] Tests cover each branch and assert token values.
 - [ ] Deliberate shortcuts carry a `ponytail:` comment.
 - [ ] `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build` all pass.

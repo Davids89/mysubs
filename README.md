@@ -53,6 +53,7 @@ Requires Node 20+, pnpm 9, Docker (optional), and the Android SDK for
 
 ```bash
 make dev            # all dev tasks via Turborepo
+make storybook      # component library at http://localhost:6006
 make test           # all tests
 make test-backend   # backend only
 make build          # build every package

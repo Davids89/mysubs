@@ -7,7 +7,9 @@
   "types": "./src/index.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "build-storybook": "storybook build --disable-telemetry",
     "lint": "eslint src --max-warnings=0",
+    "storybook": "storybook dev -p 6006 --no-open --disable-telemetry",
     "test": "echo \"No ui-components tests yet\"",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
@@ -16,7 +18,17 @@
     "react-native": "latest"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^10.6.0",
+    "@storybook/addon-docs": "^10.6.0",
+    "@storybook/react-native-web-vite": "^10.6.0",
     "@types/react": "^19.2.15",
-    "typescript": "^5.9.3"
+    "@types/react-dom": "19.2.7",
+    "react": "19.2.7",
+    "react-dom": "19.2.6",
+    "react-native": "0.86.0",
+    "react-native-web": "^0.21.2",
+    "storybook": "^10.6.0",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.0"
   }
 }

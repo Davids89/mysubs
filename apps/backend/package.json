@@ -8,6 +8,7 @@
     "db:deploy": "prisma migrate deploy",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
     "lint": "eslint src spec --max-warnings=0",
     "start": "node dist/main.js",

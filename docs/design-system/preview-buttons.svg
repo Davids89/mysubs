@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="306" viewBox="0 0 520 306" role="img" aria-label="Subtrack buttons: primary, secondary, ghost, small and destructive, drawn at true size">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="520" height="306" rx="8"/>
+  <text class="meta" x="16" y="43.0" font-size="11" font-weight="400">Primary</text>
+  <rect fill="#1D9E75" stroke-width="0" x="150" y="16" width="106" height="46" rx="8"/>
+  <text fill="#ffffff" x="203.0" y="44.4" font-size="15" font-weight="500" text-anchor="middle">Sign in</text>
+  <text class="meta" x="268" y="43.0" font-size="11" font-weight="400">46px</text>
+  <text class="meta" x="16" y="103.0" font-size="11" font-weight="400">Secondary</text>
+  <rect class="bds" fill="none" stroke-width="0.5" x="150" y="76" width="98" height="46" rx="8"/>
+  <text class="t1" x="199.0" y="104.4" font-size="15" font-weight="500" text-anchor="middle">Cancel</text>
+  <text class="meta" x="260" y="103.0" font-size="11" font-weight="400">46px</text>
+  <text class="meta" x="16" y="163.0" font-size="11" font-weight="400">Ghost / link</text>
+  <text fill="#0F6E56" x="150" y="164.4" font-size="15" font-weight="500">Forgot your password?</text>
+  <text class="meta" x="335" y="163.0" font-size="11" font-weight="400">46px</text>
+  <text class="meta" x="16" y="217.0" font-size="11" font-weight="400">Small</text>
+  <rect fill="#1D9E75" stroke-width="0" x="150" y="196" width="49" height="34" rx="8"/>
+  <text fill="#ffffff" x="174.5" y="217.68" font-size="13" font-weight="500" text-anchor="middle">Add</text>
+  <text class="meta" x="211" y="217.0" font-size="11" font-weight="400">34px</text>
+  <text class="meta" x="16" y="271.0" font-size="11" font-weight="400">Destructive</text>
+  <rect fill="none" stroke="#E24B4A" stroke-width="0.5" x="150" y="244" width="205" height="46" rx="8"/>
+  <text fill="#E24B4A" x="252.5" y="272.4" font-size="15" font-weight="500" text-anchor="middle">Delete subscription</text>
+  <text class="meta" x="367" y="271.0" font-size="11" font-weight="400">46px</text>
+</svg>

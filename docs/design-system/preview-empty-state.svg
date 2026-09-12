@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="212" viewBox="0 0 520 212" role="img" aria-label="Subtrack empty state with icon, title, body copy and a primary call to action">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="520" height="212" rx="8"/>
+  <rect class="s1" fill="none" stroke-width="0" x="16" y="16" width="488" height="180" rx="12"/>
+  <rect class="bd" fill="none" stroke-width="0.5" x="16" y="16" width="488" height="180" rx="12"/>
+  <g transform="translate(246.0,48) scale(1.16667)"><path class="ico icom" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></g>
+  <text class="t1" x="260.0" y="104" font-size="15" font-weight="500" text-anchor="middle">No subscriptions yet</text>
+  <text class="tm" x="260.0" y="124" font-size="13" font-weight="400" text-anchor="middle">Add your first subscription to start managing them.</text>
+  <rect fill="#1D9E75" stroke-width="0" x="170.0" y="140" width="180" height="46" rx="8"/>
+  <text fill="#ffffff" x="260.0" y="168" font-size="15" font-weight="500" text-anchor="middle">Add subscription</text>
+</svg>

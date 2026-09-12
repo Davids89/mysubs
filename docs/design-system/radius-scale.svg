@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="426" height="206" viewBox="0 0 426 206" role="img" aria-label="Subtrack border radius scale drawn at true size on 88 by 64 pixel boxes: xs 4px, md 8px, lg 12px, xl 18px, pill 20px, circle 50%, device 36px">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+    .bg { fill: #ffffff; }
+    .token { fill: #1a1a1a; font-weight: 500; }
+    .meta { fill: #8a8a8a; }
+    .box { fill: #f2f8f6; stroke: #9FE1CB; stroke-width: 1; }
+    .line { stroke: #e6e6e6; }
+    .strong { stroke: #c2c2c2; }
+    .ico { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .token { fill: #e6edf3; }
+      .meta { fill: #8b949e; }
+      .box { fill: #10241e; stroke: #1D9E75; }
+      .line { stroke: #30363d; }
+      .strong { stroke: #6e7681; }
+      .ico { stroke: #e6edf3; }
+    }
+  </style>
+  <rect class="bg" width="426" height="206" rx="8"/>
+  <rect class="box" x="16" y="16" width="88" height="64" rx="4"/>
+  <text class="token" x="16" y="95">xs <tspan class="meta">4px</tspan></text>
+  <rect class="box" x="118" y="16" width="88" height="64" rx="8"/>
+  <text class="token" x="118" y="95">md <tspan class="meta">8px</tspan></text>
+  <rect class="box" x="220" y="16" width="88" height="64" rx="12"/>
+  <text class="token" x="220" y="95">lg <tspan class="meta">12px</tspan></text>
+  <rect class="box" x="322" y="16" width="88" height="64" rx="18"/>
+  <text class="token" x="322" y="95">xl <tspan class="meta">18px</tspan></text>
+  <rect class="box" x="16" y="116" width="88" height="64" rx="20"/>
+  <text class="token" x="16" y="195">pill <tspan class="meta">20px</tspan></text>
+  <ellipse class="box" cx="162" cy="148" rx="44" ry="32"/>
+  <text class="token" x="118" y="195">circle <tspan class="meta">50%</tspan></text>
+  <rect class="box" x="220" y="116" width="88" height="64" rx="36"/>
+  <text class="token" x="220" y="195">device <tspan class="meta">36px</tspan></text>
+</svg>

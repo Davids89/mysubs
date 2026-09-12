@@ -1,4 +1,4 @@
-# Subtrack — Design System
+# Subtrack — Style Guide
 
 Reference document for the design agent. Every new screen must strictly follow these decisions. Do not introduce colors, typefaces, radii, or components outside of what is defined here.
 
@@ -20,19 +20,19 @@ App icon: SVG with green background `#1D9E75`, border-radius `18px`, size `72×7
 
 | Name | Hex | Usage |
 | --- | --- | --- |
-| Primary | `#1D9E75` | Main CTA, active accent, OK status icons |
-| Dark | `#0F6E56` | Links, action text, Primary hover |
-| Deeper | `#085041` | Text on light brand backgrounds |
-| Light | `#E1F5EE` | Success badge backgrounds, success state |
-| Mid | `#9FE1CB` | Borders on light brand backgrounds |
+| Primary | ![#1D9E75](https://img.shields.io/badge/-____-1D9E75?style=flat-square) `#1D9E75` | Main CTA, active accent, OK status icons |
+| Dark | ![#0F6E56](https://img.shields.io/badge/-____-0F6E56?style=flat-square) `#0F6E56` | Links, action text, Primary hover |
+| Deeper | ![#085041](https://img.shields.io/badge/-____-085041?style=flat-square) `#085041` | Text on light brand backgrounds |
+| Light | ![#E1F5EE](https://img.shields.io/badge/-____-E1F5EE?style=flat-square) `#E1F5EE` | Success badge backgrounds, success state |
+| Mid | ![#9FE1CB](https://img.shields.io/badge/-____-9FE1CB?style=flat-square) `#9FE1CB` | Borders on light brand backgrounds |
 
 ### Semantic States
 
 | Name | Background | Text | Usage |
 | --- | --- | --- | --- |
-| Danger | `#FCEBEB` | `#A32D2D` | Expires today, error |
-| Warning | `#FAEEDA` | `#854F0B` | Expires in ≤7 days |
-| Success | `#E1F5EE` | `#0F6E56` | Shared, confirmation |
+| Danger | ![#FCEBEB](https://img.shields.io/badge/-____-FCEBEB?style=flat-square) `#FCEBEB` | ![#A32D2D](https://img.shields.io/badge/-____-A32D2D?style=flat-square) `#A32D2D` | Expires today, error |
+| Warning | ![#FAEEDA](https://img.shields.io/badge/-____-FAEEDA?style=flat-square) `#FAEEDA` | ![#854F0B](https://img.shields.io/badge/-____-854F0B?style=flat-square) `#854F0B` | Expires in ≤7 days |
+| Success | ![#E1F5EE](https://img.shields.io/badge/-____-E1F5EE?style=flat-square) `#E1F5EE` | ![#0F6E56](https://img.shields.io/badge/-____-0F6E56?style=flat-square) `#0F6E56` | Shared, confirmation |
 | Neutral | `var(--surface-1)` | `var(--text-secondary)` | Generic info |
 
 ### Surfaces And Text
@@ -65,6 +65,8 @@ Single typeface: `var(--font-sans)`. No serif. Only two weights: `400` regular a
 | Label | `11px` | `500` | `--text-secondary` | Input labels |
 | Caption | `10–11px` | `400` | `--text-muted` | Dates, stat chip subtitles |
 
+![Subtrack type scale](type-scale.svg)
+
 Writing rules:
 
 - Always sentence case. Never Title Case or ALL CAPS.
@@ -89,6 +91,8 @@ Scale in multiples of 2px. Most commonly used values:
 | 3xl | `44px` | Input and button height |
 | hero | `60–72px` | Top padding on onboarding/auth screens |
 
+![Subtrack spacing scale, drawn at true size](spacing-scale.svg)
+
 ---
 
 ## Border Radius
@@ -102,6 +106,8 @@ Scale in multiples of 2px. Most commonly used values:
 | pill | `20px` | Chip badges |
 | circle | `50%` | Avatars |
 | device | `36px` | Mobile device frame in mockups |
+
+![Subtrack border radius scale, drawn at true size on 88×64 boxes](radius-scale.svg)
 
 ---
 
@@ -117,6 +123,10 @@ Always `0.5px solid`. Never `1px` except where documented.
 | Error | `0.5px solid #E24B4A` |
 | Featured accent | `2px solid var(--border-accent)`, only exception to `0.5px` |
 
+![Subtrack border widths, drawn at true size](borders.svg)
+
+Grey tones above approximate `var(--border)` and `var(--border-strong)`; the real values come from the theme tokens.
+
 ---
 
 ## Iconography
@@ -130,33 +140,37 @@ Library: Tabler Icons, outline variant only. Never use `-filled`. Decorative ico
 | `22px` | Bottom navigation icons |
 | `24px` | Decorative, maximum |
 
+![Subtrack icon sizes at true scale](icon-scale.svg)
+
 Established icons in the app:
 
 | Icon | Tabler name | Context |
 | --- | --- | --- |
-| Subscriptions | `ti-apps` | Nav, empty state |
-| Calendar | `ti-calendar` | Expiry date |
-| Shared | `ti-users` | Badge |
-| Euro | `ti-currency-euro` | Prices |
-| Notifications | `ti-bell` | Nav, settings |
-| Settings | `ti-settings` | Nav, profile |
-| Add | `ti-plus` | Nav, CTA |
-| Delete | `ti-trash` | Destructive actions |
-| Edit | `ti-edit` | Edit actions |
-| Navigate forward | `ti-chevron-right` | Tappable cards |
-| Go back | `ti-arrow-left` | Back navigation |
-| Confirmation | `ti-check` | Success state |
-| Close | `ti-x` | Modals, dismiss |
-| Email | `ti-mail` | Email input |
-| Password | `ti-lock` | Password input |
-| Show password | `ti-eye` | Visibility toggle |
-| User | `ti-user` | Name input |
-| Alert | `ti-alert-circle` | Errors, urgent |
-| Stats | `ti-chart-bar` | Nav, summary |
+| Subscriptions | [`ti-apps`](https://tabler.io/icons/icon/apps) | Nav, empty state |
+| Calendar | [`ti-calendar`](https://tabler.io/icons/icon/calendar) | Expiry date |
+| Shared | [`ti-users`](https://tabler.io/icons/icon/users) | Badge |
+| Euro | [`ti-currency-euro`](https://tabler.io/icons/icon/currency-euro) | Prices |
+| Notifications | [`ti-bell`](https://tabler.io/icons/icon/bell) | Nav, settings |
+| Settings | [`ti-settings`](https://tabler.io/icons/icon/settings) | Nav, profile |
+| Add | [`ti-plus`](https://tabler.io/icons/icon/plus) | Nav, CTA |
+| Delete | [`ti-trash`](https://tabler.io/icons/icon/trash) | Destructive actions |
+| Edit | [`ti-edit`](https://tabler.io/icons/icon/edit) | Edit actions |
+| Navigate forward | [`ti-chevron-right`](https://tabler.io/icons/icon/chevron-right) | Tappable cards |
+| Go back | [`ti-arrow-left`](https://tabler.io/icons/icon/arrow-left) | Back navigation |
+| Confirmation | [`ti-check`](https://tabler.io/icons/icon/check) | Success state |
+| Close | [`ti-x`](https://tabler.io/icons/icon/x) | Modals, dismiss |
+| Email | [`ti-mail`](https://tabler.io/icons/icon/mail) | Email input |
+| Password | [`ti-lock`](https://tabler.io/icons/icon/lock) | Password input |
+| Show password | [`ti-eye`](https://tabler.io/icons/icon/eye) | Visibility toggle |
+| User | [`ti-user`](https://tabler.io/icons/icon/user) | Name input |
+| Alert | [`ti-alert-circle`](https://tabler.io/icons/icon/alert-circle) | Errors, urgent |
+| Stats | [`ti-chart-bar`](https://tabler.io/icons/icon/chart-bar) | Nav, summary |
 
 ---
 
 ## Components
+
+Previews below are generated from this spec by `make-previews.py`; re-run it after changing a component's values.
 
 ### Primary Button
 
@@ -224,6 +238,8 @@ font-size: 15px;
 font-weight: 500;
 ```
 
+![Subtrack buttons at true size](preview-buttons.svg)
+
 ### Text Input
 
 ```css
@@ -244,6 +260,8 @@ States:
 - Confirmed: border `#1D9E75`, icon `ti-check` in `#1D9E75`.
 
 The input label sits above the field: `font-size: 11px`, `font-weight: 500`, `color: var(--text-secondary)`. Gap between label and field: `6px`.
+
+![Text input in its four states](preview-text-input.svg)
 
 ### Subscription Card
 
@@ -269,6 +287,8 @@ Expiry date semantics:
 - 7 days or less: `color: #854F0B`.
 - Today or tomorrow: text "Expires today" and `color: #A32D2D`.
 
+![Subscription card](preview-subscription-card.svg)
+
 ### Badge / Chip
 
 ```css
@@ -288,6 +308,8 @@ gap: 3px to 4px;
 | Danger | `#FCEBEB` | `#A32D2D` |
 | Neutral | `var(--surface-1)` + border | `var(--text-secondary)` |
 
+![Badge variants](preview-badges.svg)
+
 ### Stat Chip
 
 ```css
@@ -300,6 +322,8 @@ text-align: center;
 - Value: `15px`, `500`, `var(--text-primary)`.
 - Label: `10px`, `400`, `var(--text-muted)`, margin-top `2px`.
 - Always used in groups of 2 to 4 with `gap: 8px`. Never used in isolation.
+
+![Stat chips](preview-stat-chips.svg)
 
 ### Empty State
 
@@ -322,6 +346,8 @@ gap: 8px;
 
 Empty state copy is an invitation, not an apology: "Add your first subscription to start managing them.", never "Nothing here yet."
 
+![Empty state](preview-empty-state.svg)
+
 ### Bottom Navigation
 
 ```css
@@ -339,6 +365,8 @@ Each item:
 - Icon-to-label gap: `3px`.
 
 Planned tabs: Home (`ti-apps`), Summary (`ti-chart-bar`), Add (`ti-plus`), Settings (`ti-settings`).
+
+![Bottom navigation](preview-bottom-nav.svg)
 
 ### Settings List Rows
 
@@ -365,6 +393,8 @@ No border on the last row.
 - Label: `14px`, `400`, `var(--text-primary)`, `flex: 1`.
 - Value or chevron on the right: `13px`, `var(--text-muted)`.
 
+![Settings list rows](preview-settings-rows.svg)
+
 ### Text Separator
 
 ```css
@@ -375,6 +405,8 @@ gap: 10px;
 
 - Lines: `height: 0.5px`, `background: var(--border)`, `flex: 1`.
 - Text: `11px`, `var(--text-muted)`.
+
+![Text separator](preview-separator.svg)
 
 ### Success State Icon
 
@@ -389,6 +421,8 @@ justify-content: center;
 ```
 
 `ti-check` icon: `22px to 32px`, color `#1D9E75`.
+
+![Success state icon](preview-success-icon.svg)
 
 ---
 

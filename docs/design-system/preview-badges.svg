@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="70" viewBox="0 0 460 70" role="img" aria-label="Subtrack badges: shared, warning, danger and neutral variants">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="460" height="70" rx="8"/>
+  <rect fill="#E1F5EE" stroke-width="0" x="16" y="24" width="72" height="20" rx="20"/>
+  <g transform="translate(24,29) scale(0.458333)"><path class="ico" stroke="#0F6E56" d="M9 8a3 3 0 1 0 0 -.01M4 20v-1a4 4 0 0 1 4 -4h2a4 4 0 0 1 4 4v1M16 4a3 3 0 0 1 0 8M20 20v-1a4 4 0 0 0 -3 -3.85"/></g>
+  <text fill="#0F6E56" x="42" y="38" font-size="11" font-weight="500">Shared</text>
+  <text class="meta" x="16" y="60" font-size="11" font-weight="400">Shared</text>
+  <rect fill="#FAEEDA" stroke-width="0" x="102" y="24" width="139" height="20" rx="20"/>
+  <g transform="translate(110,29) scale(0.458333)"><path class="ico" stroke="#854F0B" d="M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2M16 3v4M8 3v4M4 11h16"/></g>
+  <text fill="#854F0B" x="128" y="38" font-size="11" font-weight="500">Expires in 5 days</text>
+  <text class="meta" x="102" y="60" font-size="11" font-weight="400">Warning</text>
+  <rect fill="#FCEBEB" stroke-width="0" x="255" y="24" width="115" height="20" rx="20"/>
+  <g transform="translate(263,29) scale(0.458333)"><path class="ico" stroke="#A32D2D" d="M12 3a9 9 0 1 0 0 18a9 9 0 0 0 0 -18M12 8v4M12 16h.01"/></g>
+  <text fill="#A32D2D" x="281" y="38" font-size="11" font-weight="500">Expires today</text>
+  <text class="meta" x="255" y="60" font-size="11" font-weight="400">Danger</text>
+  <rect class="s1" fill="none" stroke-width="0" x="384" y="24" width="60" height="20" rx="20"/>
+  <rect class="bd" fill="none" stroke-width="0.5" x="384" y="24" width="60" height="20" rx="20"/>
+  <text fill="#5a5a5a" x="393" y="38" font-size="11" font-weight="500">Monthly</text>
+  <text class="meta" x="384" y="60" font-size="11" font-weight="400">Neutral</text>
+</svg>

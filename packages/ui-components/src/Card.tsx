@@ -35,7 +35,7 @@ export function Card({ children, style, variant = "outlined", ...props }: Props)
 }
 
 // The token set has no elevation scale yet, so the shadow is the one place
-// this file uses literals. See docs/component-guidelines.md §5.
+// this file uses literals. See docs/design-system/contributing.md §5.
 const styles = StyleSheet.create({
   elevated: {
     elevation: 2,

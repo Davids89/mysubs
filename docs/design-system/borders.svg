@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="234" viewBox="0 0 520 234" role="img" aria-label="Subtrack border widths drawn at true size: default and emphasized and focus and error at 0.5 pixels, featured accent at 2 pixels">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+    .bg { fill: #ffffff; }
+    .token { fill: #1a1a1a; font-weight: 500; }
+    .meta { fill: #8a8a8a; }
+    .box { fill: #f2f8f6; stroke: #9FE1CB; stroke-width: 1; }
+    .line { stroke: #e6e6e6; }
+    .strong { stroke: #c2c2c2; }
+    .ico { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .token { fill: #e6edf3; }
+      .meta { fill: #8b949e; }
+      .box { fill: #10241e; stroke: #1D9E75; }
+      .line { stroke: #30363d; }
+      .strong { stroke: #6e7681; }
+      .ico { stroke: #e6edf3; }
+    }
+  </style>
+  <rect class="bg" width="520" height="234" rx="8"/>
+  <rect class="line" fill="none" stroke-width="0.5" x="200.5" y="18" width="300" height="28" rx="8"/>
+  <text class="token" x="16" y="36">Default</text>
+  <text class="meta" x="110" y="36">0.5px</text>
+  <rect class="strong" fill="none" stroke-width="0.5" x="200.5" y="60" width="300" height="28" rx="8"/>
+  <text class="token" x="16" y="78">Emphasized</text>
+  <text class="meta" x="110" y="78">0.5px</text>
+  <rect stroke="#1D9E75" fill="none" stroke-width="0.5" x="200.5" y="102" width="300" height="28" rx="8"/>
+  <text class="token" x="16" y="120">Focus / active</text>
+  <text class="meta" x="110" y="120">0.5px</text>
+  <rect stroke="#E24B4A" fill="none" stroke-width="0.5" x="200.5" y="144" width="300" height="28" rx="8"/>
+  <text class="token" x="16" y="162">Error</text>
+  <text class="meta" x="110" y="162">0.5px</text>
+  <rect stroke="#1D9E75" fill="none" stroke-width="2" x="200.5" y="186" width="300" height="28" rx="8"/>
+  <text class="token" x="16" y="204">Featured accent</text>
+  <text class="meta" x="110" y="204">2px</text>
+</svg>

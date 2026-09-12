@@ -87,12 +87,31 @@ Inspect what landed in the DB with `make db-shell`, then e.g.
 | POST   | `/auth/register` | firstName, lastName, email, password      |
 | POST   | `/auth/login`    | email, password → JWT                     |
 
+## Design system
+
+Ten React Native primitives, one theme, tokens for everything else, in
+`packages/ui-components`. Accessibility-first, mobile-first, and deliberately
+small — a component earns its place by being needed twice.
+
+```bash
+make storybook      # every component and variant at http://localhost:6006
+```
+
+`master` builds and deploys Storybook to GitHub Pages through
+`.github/workflows/storybook.yml`.
+
+Everything about it is documented in **[`docs/design-system/`](docs/design-system/)** —
+the [style guide](docs/design-system/style-guide.md) for what a screen should
+look like, the [usage guide](docs/design-system/usage-guide.md) for building
+one, and [contributing](docs/design-system/contributing.md) for changing a
+component.
+
 ## Docs
 
+- `docs/design-system/` — the design system: style guide, usage, contributing
 - `docs/architecture.md` — diagrams and why the structure is this small
 - `docs/auth-flow.md` — registration and login end to end
-- `docs/subtrack-design-system.md` — colors, typography, components
-- `docs/component-guidelines.md` — how we build components, and when not to
+- `packages/ui-components/CHANGELOG.md` — what changed in the design system
 - `CLAUDE.md` — conventions AI agents (and humans) follow here
 
 ## License

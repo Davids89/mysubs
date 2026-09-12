@@ -2,6 +2,7 @@ node_modules/
 dist/
 coverage/
 .turbo/
+storybook-static/
 apps/mobile/.expo/
 .env
 .env.*

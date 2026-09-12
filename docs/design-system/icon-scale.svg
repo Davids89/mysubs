@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="150" viewBox="0 0 520 150" role="img" aria-label="Subtrack icon sizes 16, 18, 22 and 24 pixels shown with the Tabler outline check icon, plus sample outline glyphs at 22 pixels">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+    .bg { fill: #ffffff; }
+    .token { fill: #1a1a1a; font-weight: 500; }
+    .meta { fill: #8a8a8a; }
+    .box { fill: #f2f8f6; stroke: #9FE1CB; stroke-width: 1; }
+    .line { stroke: #e6e6e6; }
+    .strong { stroke: #c2c2c2; }
+    .ico { fill: none; stroke: #1a1a1a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .token { fill: #e6edf3; }
+      .meta { fill: #8b949e; }
+      .box { fill: #10241e; stroke: #1D9E75; }
+      .line { stroke: #30363d; }
+      .strong { stroke: #6e7681; }
+      .ico { stroke: #e6edf3; }
+    }
+  </style>
+  <rect class="bg" width="520" height="150" rx="8"/>
+  <text class="meta" x="16" y="26">Sizes, ti-check at true scale</text>
+  <g transform="translate(16,44) scale(0.6666666666666666)"><path class="ico" d="M5 12l5 5l10 -10"/></g>
+  <text class="token" x="16" y="78">16px</text>
+  <g transform="translate(76,42) scale(0.75)"><path class="ico" d="M5 12l5 5l10 -10"/></g>
+  <text class="token" x="76" y="78">18px</text>
+  <g transform="translate(138,38) scale(0.9166666666666666)"><path class="ico" d="M5 12l5 5l10 -10"/></g>
+  <text class="token" x="138" y="78">22px</text>
+  <g transform="translate(204,36) scale(1.0)"><path class="ico" d="M5 12l5 5l10 -10"/></g>
+  <text class="token" x="204" y="78">24px</text>
+  <line class="line" stroke-width="1" x1="16" y1="96" x2="504" y2="96"/>
+  <text class="meta" x="16" y="118">Outline variant, 22px</text>
+  <g transform="translate(200,100) scale(0.9166666666666666)"><path class="ico" d="M5 12l5 5l10 -10"/></g>
+  <g transform="translate(260,100) scale(0.9166666666666666)"><path class="ico" d="M12 5v14M5 12h14"/></g>
+  <g transform="translate(320,100) scale(0.9166666666666666)"><path class="ico" d="M18 6l-12 12M6 6l12 12"/></g>
+  <g transform="translate(380,100) scale(0.9166666666666666)"><path class="ico" d="M9 6l6 6l-6 6"/></g>
+  <g transform="translate(440,100) scale(0.9166666666666666)"><path class="ico" d="M5 12h14M5 12l6 6M5 12l6 -6"/></g>
+</svg>

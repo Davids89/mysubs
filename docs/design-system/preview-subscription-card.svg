@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="92" viewBox="0 0 520 92" role="img" aria-label="Subtrack subscription card: app icon, name, price, expiry date, shared badge and chevron">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="520" height="92" rx="8"/>
+  <rect class="s2" fill="none" stroke-width="0.5" x="16" y="16" width="488" height="64" rx="12"/>
+  <rect class="bd" fill="none" stroke-width="0.5" x="16" y="16" width="488" height="64" rx="12"/>
+  <rect fill="#E1F5EE" stroke-width="0" x="30" y="28" width="40" height="40" rx="10"/>
+  <text fill="#1D9E75" x="50" y="54" font-size="18" font-weight="500" text-anchor="middle">N</text>
+  <text class="t1" x="82" y="44" font-size="14" font-weight="500">Netflix</text>
+  <text class="t1" x="474" y="44" font-size="14" font-weight="500" text-anchor="end">12,99 €</text>
+  <g transform="translate(82,52) scale(0.583333)"><path class="ico icom" d="M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2H6a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2M16 3v4M8 3v4M4 11h16"/></g>
+  <text class="t2" x="100" y="63" font-size="12" font-weight="400">14 Oct 2026</text>
+  <rect fill="#E1F5EE" stroke-width="0" x="176" y="52" width="63" height="16" rx="20"/>
+  <g transform="translate(182,56) scale(0.375)"><path class="ico icog" d="M9 8a3 3 0 1 0 0 -.01M4 20v-1a4 4 0 0 1 4 -4h2a4 4 0 0 1 4 4v1M16 4a3 3 0 0 1 0 8M20 20v-1a4 4 0 0 0 -3 -3.85"/></g>
+  <text fill="#0F6E56" x="195" y="63" font-size="10" font-weight="500">Shared</text>
+  <g transform="translate(486,41) scale(0.583333)"><path class="ico icom" d="M9 6l6 6l-6 6"/></g>
+</svg>

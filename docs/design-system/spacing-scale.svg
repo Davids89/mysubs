@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="208" viewBox="0 0 420 208" role="img" aria-label="Subtrack spacing scale drawn at true size: xs 4px, sm 6–8px, md 10–12px, lg 14–16px, xl 20–24px, 2xl 28–32px, 3xl 44px, hero 60–72px">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 11px; }
+    .bg { fill: #ffffff; }
+    .token { fill: #1a1a1a; font-weight: 500; }
+    .meta { fill: #8a8a8a; }
+    .bar { fill: #1D9E75; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .token { fill: #e6edf3; }
+      .meta { fill: #8b949e; }
+    }
+  </style>
+  <rect class="bg" width="420" height="208" rx="8"/>
+
+  <text class="token" x="16" y="31">xs</text>
+  <rect class="bar" x="60" y="20" width="4" height="14" rx="2"/>
+  <text class="meta" x="72" y="31">4px</text>
+
+  <text class="token" x="16" y="53">sm</text>
+  <rect class="bar" x="60" y="42" width="8" height="14" rx="2"/>
+  <text class="meta" x="76" y="53">6–8px</text>
+
+  <text class="token" x="16" y="75">md</text>
+  <rect class="bar" x="60" y="64" width="12" height="14" rx="2"/>
+  <text class="meta" x="80" y="75">10–12px</text>
+
+  <text class="token" x="16" y="97">lg</text>
+  <rect class="bar" x="60" y="86" width="16" height="14" rx="2"/>
+  <text class="meta" x="84" y="97">14–16px</text>
+
+  <text class="token" x="16" y="119">xl</text>
+  <rect class="bar" x="60" y="108" width="24" height="14" rx="2"/>
+  <text class="meta" x="92" y="119">20–24px</text>
+
+  <text class="token" x="16" y="141">2xl</text>
+  <rect class="bar" x="60" y="130" width="28" height="14" rx="2"/>
+  <text class="meta" x="96" y="141">28–32px</text>
+
+  <text class="token" x="16" y="163">3xl</text>
+  <rect class="bar" x="60" y="152" width="44" height="14" rx="2"/>
+  <text class="meta" x="112" y="163">44px</text>
+
+  <text class="token" x="16" y="185">hero</text>
+  <rect class="bar" x="60" y="174" width="72" height="14" rx="2"/>
+  <text class="meta" x="140" y="185">60–72px</text>
+
+</svg>

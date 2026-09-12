@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="408" height="80" viewBox="0 0 408 80" role="img" aria-label="Subtrack stat chips shown as a group of three">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="408" height="80" rx="8"/>
+  <rect class="s1" fill="none" stroke-width="0" x="16" y="16" width="120" height="48" rx="10"/>
+  <text class="t1" x="76.0" y="40" font-size="15" font-weight="500" text-anchor="middle">48,97 €</text>
+  <text class="tm" x="76.0" y="54" font-size="10" font-weight="400" text-anchor="middle">Per month</text>
+  <rect class="s1" fill="none" stroke-width="0" x="144" y="16" width="120" height="48" rx="10"/>
+  <text class="t1" x="204.0" y="40" font-size="15" font-weight="500" text-anchor="middle">7</text>
+  <text class="tm" x="204.0" y="54" font-size="10" font-weight="400" text-anchor="middle">Active</text>
+  <rect class="s1" fill="none" stroke-width="0" x="272" y="16" width="120" height="48" rx="10"/>
+  <text class="t1" x="332.0" y="40" font-size="15" font-weight="500" text-anchor="middle">3</text>
+  <text class="tm" x="332.0" y="54" font-size="10" font-weight="400" text-anchor="middle">Shared</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="170" viewBox="0 0 520 170" role="img" aria-label="Subtrack settings list with three rows, icon, label, value and chevron">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="520" height="170" rx="8"/>
+  <rect class="s2" fill="none" stroke-width="0.5" x="16" y="16" width="488" height="138" rx="12"/>
+  <rect class="bd" fill="none" stroke-width="0.5" x="16" y="16" width="488" height="138" rx="12"/>
+  <g transform="translate(30,30) scale(0.75)"><path class="ico" d="M10.325 4.317c.426 -1.756 2.924 -1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543 -.94 3.31 .826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756 .426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543 -.826 3.31 -2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756 -2.924 1.756 -3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543 .94 -3.31 -.826 -2.37 -2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756 -.426 -1.756 -2.924 0 -3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94 -1.543 .826 -3.31 2.37 -2.37c1 .608 2.296 .07 2.572 -1.065zM12 9a3 3 0 1 0 0 6a3 3 0 0 0 0 -6"/></g>
+  <text class="t1" x="58" y="44" font-size="14" font-weight="400">Account</text>
+  <g transform="translate(478,33) scale(0.541667)"><path class="ico icom" d="M9 6l6 6l-6 6"/></g>
+  <line class="bd" stroke-width="0.5" x1="16" y1="62" x2="504" y2="62"/>
+  <g transform="translate(30,76) scale(0.75)"><path class="ico" d="M10 5a2 2 0 1 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3H4a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6M9 17v1a3 3 0 0 0 6 0v-1"/></g>
+  <text class="t1" x="58" y="90" font-size="14" font-weight="400">Notifications</text>
+  <text class="tm" x="468" y="90" font-size="13" font-weight="400" text-anchor="end">On</text>
+  <g transform="translate(478,79) scale(0.541667)"><path class="ico icom" d="M9 6l6 6l-6 6"/></g>
+  <line class="bd" stroke-width="0.5" x1="16" y1="108" x2="504" y2="108"/>
+  <g transform="translate(30,122) scale(0.75)"><path class="ico" d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2 -2l1 -12M9 7V4h6v3"/></g>
+  <text class="t1" x="58" y="136" font-size="14" font-weight="400">Delete account</text>
+  <g transform="translate(478,125) scale(0.541667)"><path class="ico icom" d="M9 6l6 6l-6 6"/></g>
+</svg>

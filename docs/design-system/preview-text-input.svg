@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="250" viewBox="0 0 520 250" role="img" aria-label="Subtrack text input in its four states: default, focus, error and confirmed">
+  <style>
+    text { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+    .bg { fill: #fbfbfa; }
+    .s1 { fill: #f4f6f5; }
+    .s2 { fill: #ffffff; }
+    .t1 { fill: #1a1a1a; }
+    .t2 { fill: #5a5a5a; }
+    .tm { fill: #8a8a8a; }
+    .meta { fill: #8a8a8a; font-size: 11px; }
+    .bd { stroke: #e6e6e6; fill: none; }
+    .bds { stroke: #c2c2c2; fill: none; }
+    .ico { fill: none; stroke: #5a5a5a; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .icom { stroke: #8a8a8a; }
+    .icow { stroke: #ffffff; }
+    .icog { stroke: #1D9E75; }
+    .icor { stroke: #E24B4A; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #0d1117; }
+      .s1 { fill: #1c2128; }
+      .s2 { fill: #161b22; }
+      .t1 { fill: #e6edf3; }
+      .t2 { fill: #9ca3af; }
+      .tm { fill: #6e7681; }
+      .meta { fill: #6e7681; }
+      .bd { stroke: #30363d; }
+      .bds { stroke: #6e7681; }
+      .ico { stroke: #9ca3af; }
+      .icom { stroke: #6e7681; }
+    }
+  </style>
+  <rect class="bg" fill="none" stroke-width="0" x="0" y="0" width="520" height="250" rx="8"/>
+  <text class="t2" x="150" y="10" font-size="11" font-weight="500">Email address</text>
+  <text class="meta" x="16" y="42" font-size="11" font-weight="400">Default</text>
+  <rect class="bd" fill="none" stroke-width="0.5" x="150" y="16" width="300" height="44" rx="8"/>
+  <rect class="s1" fill-opacity="0.6" stroke-width="0" x="150" y="16" width="300" height="44" rx="8"/>
+  <g transform="translate(162,30) scale(0.666667)"><path class="ico icom" d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2M3 7l9 6l9 -6"/></g>
+  <text class="tm" x="188" y="43" font-size="14" font-weight="400">you@example.com</text>
+  <text class="meta" x="462" y="42" font-size="11" font-weight="400">44px</text>
+  <text class="meta" x="16" y="100" font-size="11" font-weight="400">Focus / active</text>
+  <rect fill="none" stroke="#1D9E75" stroke-width="0.5" x="150" y="74" width="300" height="44" rx="8"/>
+  <rect class="s1" fill-opacity="0.6" stroke-width="0" x="150" y="74" width="300" height="44" rx="8"/>
+  <g transform="translate(162,88) scale(0.666667)"><path class="ico icog" d="M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2H5a2 2 0 0 1 -2 -2V7a2 2 0 0 1 2 -2M3 7l9 6l9 -6"/></g>
+  <text class="t1" x="188" y="101" font-size="14" font-weight="400">david@subtrack.app</text>
+  <text class="meta" x="462" y="100" font-size="11" font-weight="400">44px</text>
+  <text class="meta" x="16" y="158" font-size="11" font-weight="400">Error</text>
+  <rect fill="none" stroke="#E24B4A" stroke-width="0.5" x="150" y="132" width="300" height="44" rx="8"/>
+  <rect class="s1" fill-opacity="0.6" stroke-width="0" x="150" y="132" width="300" height="44" rx="8"/>
+  <g transform="translate(162,146) scale(0.666667)"><path class="ico icor" d="M7 11h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2M8 11V7a4 4 0 0 1 8 0v4"/></g>
+  <text class="t1" x="188" y="159" font-size="14" font-weight="400">••••••</text>
+  <text class="meta" x="462" y="158" font-size="11" font-weight="400">44px</text>
+  <text class="meta" x="16" y="216" font-size="11" font-weight="400">Confirmed</text>
+  <rect fill="none" stroke="#1D9E75" stroke-width="0.5" x="150" y="190" width="300" height="44" rx="8"/>
+  <rect class="s1" fill-opacity="0.6" stroke-width="0" x="150" y="190" width="300" height="44" rx="8"/>
+  <g transform="translate(162,204) scale(0.666667)"><path class="ico icog" d="M7 11h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2H7a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2M8 11V7a4 4 0 0 1 8 0v4"/></g>
+  <text class="t1" x="188" y="217" font-size="14" font-weight="400">••••••</text>
+  <g transform="translate(422,204) scale(0.666667)"><path class="ico icog" d="M5 12l5 5l10 -10"/></g>
+  <text class="meta" x="462" y="216" font-size="11" font-weight="400">44px</text>
+</svg>

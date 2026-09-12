@@ -10,6 +10,8 @@ Companion documents:
   of truth for colors, sizes, and copy.
 - [usage-guide.md](./usage-guide.md) — how to *use* the components from a
   screen: inventory, accessibility notes, common patterns.
+- [governance.md](./governance.md) — how a change is approved, versioned,
+  released, and requested.
 - [architecture.md](../architecture.md) — where a component sits in the system.
 - [`CLAUDE.md`](../../CLAUDE.md) — the repo-wide rules this document specialises.
 

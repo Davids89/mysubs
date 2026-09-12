@@ -18,6 +18,7 @@ AI agents must read and apply these rules in **all** code interactions.
 - The Subtrack design system is the source of truth for identity, colors, typography, spacing, radii, borders, components, screen structure, and UI copy rules.
 - Reusable design tokens, theme providers, and shared UI primitives belong in `packages/ui-components`.
 - Before adding or changing a component in `packages/ui-components`, read `docs/design-system/contributing.md`, and record the change under `Unreleased` in `packages/ui-components/CHANGELOG.md`.
+- Versioning, releases, and how a change gets approved live in `docs/design-system/governance.md`. Never cut a release or bump the version without following it.
 - Before *using* those components in a screen, read `docs/design-system/usage-guide.md` — component inventory, accessibility notes, and the patterns already in use.
 
 ---

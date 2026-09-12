@@ -1,16 +1,17 @@
-# Component Guidelines
+# Contributing to the Design System
 
-How we build components in `packages/ui-components`, and why there is so little
+How we build components in `packages/ui-components`, and why there are so few
 of them.
 
 Companion documents:
 
-- [subtrack-design-system.md](./subtrack-design-system.md) — what a component
-  must look like. Source of truth for colors, sizes, and copy.
-- [design-system-usage.md](./design-system-usage.md) — how to *use* the
-  components from a screen: inventory, accessibility notes, common patterns.
-- [architecture.md](./architecture.md) — where a component sits in the system.
-- [`CLAUDE.md`](../CLAUDE.md) — the repo-wide rules this document specialises.
+- [README.md](./README.md) — the design system at a glance, and where to start.
+- [style-guide.md](./style-guide.md) — what a component must look like. Source
+  of truth for colors, sizes, and copy.
+- [usage-guide.md](./usage-guide.md) — how to *use* the components from a
+  screen: inventory, accessibility notes, common patterns.
+- [architecture.md](../architecture.md) — where a component sits in the system.
+- [`CLAUDE.md`](../../CLAUDE.md) — the repo-wide rules this document specialises.
 
 ---
 
@@ -37,7 +38,7 @@ Four ideas drive everything below:
 
 Create one when **either** is true:
 
-- `docs/subtrack-design-system.md` defines it as a component.
+- `style-guide.md` defines it as a component.
 - A second screen needs the same thing. (The first screen inlines it. The
   second one extracts it.)
 

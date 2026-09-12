@@ -64,7 +64,7 @@ export function Modal({ children, onClose, title, visible }: Props) {
 }
 
 // The token set has no scrim color, so the backdrop is the one place this
-// file uses literals. See docs/component-guidelines.md §5.
+// file uses literals. See docs/design-system/contributing.md §5.
 const styles = StyleSheet.create({
   backdrop: {
     alignItems: "center",

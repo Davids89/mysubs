@@ -11,7 +11,7 @@ Audit UI against the Subtrack design system and fix violations in the same pass.
 
 Read these before validating or fixing:
 
-1. `docs/subtrack-design-system.md` — colors, typography, spacing, components, copy rules, screen structure
+1. `docs/design-system/style-guide.md` — colors, typography, spacing, components, copy rules, screen structure
 2. `packages/ui-components/src/theme/tokens.ts` — implemented React Native token values
 3. `apps/mobile/CLAUDE.md` — mobile screen/hook/component conventions
 4. `CLAUDE.md` — design system placement rules
@@ -74,7 +74,7 @@ For each file in scope, verify:
 | Accessibility | Decorative icons hidden from accessibility. Icon-only buttons have labels. |
 | Architecture | Screen logic in hooks. One component per file. No API calls inside presentational components. |
 
-For screen structure, compare against the defined layouts in `docs/subtrack-design-system.md` (login, registration, subscription list, success, empty states).
+For screen structure, compare against the defined layouts in `docs/design-system/style-guide.md` (login, registration, subscription list, success, empty states).
 
 Token mapping from CSS variables to React Native theme paths is in [token-map.md](token-map.md).
 

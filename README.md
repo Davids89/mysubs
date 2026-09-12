@@ -98,17 +98,19 @@ make storybook      # every component and variant at http://localhost:6006
 ```
 
 `master` builds and deploys Storybook to GitHub Pages through
-`.github/workflows/storybook.yml`. Start with
-`docs/design-system-usage.md` to consume it, `docs/component-guidelines.md` to
-change it.
+`.github/workflows/storybook.yml`.
+
+Everything about it is documented in **[`docs/design-system/`](docs/design-system/)** —
+the [style guide](docs/design-system/style-guide.md) for what a screen should
+look like, the [usage guide](docs/design-system/usage-guide.md) for building
+one, and [contributing](docs/design-system/contributing.md) for changing a
+component.
 
 ## Docs
 
+- `docs/design-system/` — the design system: style guide, usage, contributing
 - `docs/architecture.md` — diagrams and why the structure is this small
 - `docs/auth-flow.md` — registration and login end to end
-- `docs/subtrack-design-system.md` — colors, typography, components
-- `docs/design-system-usage.md` — using the components: inventory and patterns
-- `docs/component-guidelines.md` — how we build components, and when not to
 - `packages/ui-components/CHANGELOG.md` — what changed in the design system
 - `CLAUDE.md` — conventions AI agents (and humans) follow here
 

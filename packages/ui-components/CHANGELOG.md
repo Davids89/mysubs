@@ -15,9 +15,15 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- Usage guide (`docs/design-system-usage.md`): setup, component inventory with
+- Usage guide (`docs/design-system/usage-guide.md`): setup, component inventory with
   accessibility notes, and the patterns screens already repeat.
 - This changelog.
+
+### Changed
+
+- The design system docs moved into `docs/design-system/` behind a README:
+  `style-guide.md` (was `subtrack-design-system.md`), `usage-guide.md`, and
+  `contributing.md` (was `component-guidelines.md`).
 
 ## 2026-09-11
 
@@ -27,7 +33,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
   component, `autodocs` props tables, and the `a11y` addon running axe on every
   story. `make storybook` serves it; `.github/workflows/storybook.yml` builds on
   every PR touching the package and deploys `master` to GitHub Pages.
-- `component-guidelines.md` §8 documenting how a story is written.
+- `docs/design-system/contributing.md` §8 documenting how a story is written.
 
 ### Fixed
 
@@ -46,7 +52,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Component metrics in `tokens.ts` (`components.badge`, `components.button`,
   `components.emptyState`, `components.input`, `components.subscriptionCard`)
   so no primitive needs a literal size.
-- `component-guidelines.md`: when to create a component, the file shape, props
+- `docs/design-system/contributing.md`: when to create a component, the file shape, props
   and styling rules, accessibility requirements, and the pre-PR checklist.
 
 ### Notes

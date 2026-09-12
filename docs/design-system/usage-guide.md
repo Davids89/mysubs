@@ -5,11 +5,12 @@ what it costs you in accessibility, and the patterns we already repeat.
 
 Companion documents:
 
-- [subtrack-design-system.md](./subtrack-design-system.md) — the source of
-  truth for colors, typography, spacing, and what a component must look like.
-- [component-guidelines.md](./component-guidelines.md) — how to **build** or
-  change a component. Read that one before opening a PR against the package.
-- [architecture.md](./architecture.md) — where the package sits in the monorepo.
+- [README.md](./README.md) — the design system at a glance, and where to start.
+- [style-guide.md](./style-guide.md) — the source of truth for colors,
+  typography, spacing, and what a component must look like.
+- [contributing.md](./contributing.md) — how to **build** or change a
+  component. Read that one before opening a PR against the package.
+- [architecture.md](../architecture.md) — where the package sits in the monorepo.
 
 ---
 
@@ -22,7 +23,7 @@ Companion documents:
 - **Tokens are the vocabulary.** Components compose decisions that already
   exist in `tokens.ts`. A screen never invents a color or a size.
 - **The smallest set that works.** Ten primitives, one file each. We add the
-  eleventh when a second screen needs it — see `component-guidelines.md` §2.
+  eleventh when a second screen needs it — see `contributing.md` §2.
 
 Browse everything running: `make storybook` → <http://localhost:6006>.
 
@@ -112,7 +113,7 @@ Known gaps, all deliberate:
 
 Every one of these is greppable in the source as a `ponytail:` comment.
 
-There is no Figma file. `docs/subtrack-design-system.md` plus Storybook are the
+There is no Figma file. This folder plus Storybook are the
 design source of truth; if a Figma library ever exists, link it here.
 
 ---
@@ -248,7 +249,7 @@ wins. Use it for layout, not for repainting:
 ```
 
 If you find yourself overriding a color, the variant is missing — add it to the
-component instead. See `component-guidelines.md` §4.
+component instead. See `contributing.md` §4.
 
 ---
 

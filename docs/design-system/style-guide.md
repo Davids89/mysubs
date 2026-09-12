@@ -1,4 +1,4 @@
-# Subtrack — Design System
+# Subtrack — Style Guide
 
 Reference document for the design agent. Every new screen must strictly follow these decisions. Do not introduce colors, typefaces, radii, or components outside of what is defined here.
 

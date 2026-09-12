@@ -7,6 +7,8 @@ Companion documents:
 
 - [subtrack-design-system.md](./subtrack-design-system.md) — what a component
   must look like. Source of truth for colors, sizes, and copy.
+- [design-system-usage.md](./design-system-usage.md) — how to *use* the
+  components from a screen: inventory, accessibility notes, common patterns.
 - [architecture.md](./architecture.md) — where a component sits in the system.
 - [`CLAUDE.md`](../CLAUDE.md) — the repo-wide rules this document specialises.
 

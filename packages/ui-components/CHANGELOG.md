@@ -3,21 +3,33 @@
 Notable changes to the design system package: tokens, primitives, and the
 Storybook that documents them.
 
-The package is `private` and unversioned — both apps consume it from source
-inside the monorepo, so there is nothing to publish and no version to bump yet.
-Entries are grouped by the date they landed on `master`. A real version scheme
-arrives with DESIGN-001.5 (design system governance and versioning); until then,
-**add your entry under `Unreleased` in the same PR that changes the package.**
+The package is `private` — both apps consume it from source inside the monorepo,
+so a version is a name for a set of changes, not something published. Versions
+follow [semantic versioning](https://semver.org) as described in
+[governance.md](../../docs/design-system/governance.md#1-versioning); releases
+are cut on demand, not on a calendar.
+
+**Add your entry under `Unreleased` in the same PR that changes the package.**
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+Entries before `0.1.0` are grouped by the date they landed on `master`.
 
 ## Unreleased
 
+## [0.1.0] - 2026-09-12
+
 ### Added
 
+- Versioning and release process: this package is now versioned with semver,
+  released on demand, and tagged `ui-components-vX.Y.Z`.
+  See [governance.md](../../docs/design-system/governance.md).
+- Component request and design change issue templates, so a request for a new
+  primitive starts with the screens that need it.
 - Usage guide (`docs/design-system/usage-guide.md`): setup, component inventory with
   accessibility notes, and the patterns screens already repeat.
 - This changelog.
+- True-size previews in `style-guide.md` for the palette, type and spacing
+  scales, radii, borders, icons, and every component.
 
 ### Changed
 

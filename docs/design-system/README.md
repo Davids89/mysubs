@@ -10,7 +10,8 @@ Everything renders in Storybook:
 make storybook      # http://localhost:6006
 ```
 
-`master` builds and deploys it to GitHub Pages through
+`master` builds and deploys it to GitHub Pages —
+[davids89.github.io/mysubs](https://davids89.github.io/mysubs/) — through
 [`.github/workflows/storybook.yml`](../../.github/workflows/storybook.yml).
 
 ---
@@ -22,6 +23,7 @@ make storybook      # http://localhost:6006
 | Know what a screen should look like — colors, type, spacing, copy | [style-guide.md](./style-guide.md) |
 | Use the components in a screen | [usage-guide.md](./usage-guide.md) |
 | Add or change a component | [contributing.md](./contributing.md) |
+| Know how changes get approved, versioned, and released | [governance.md](./governance.md) |
 | See what changed and when | [CHANGELOG.md](../../packages/ui-components/CHANGELOG.md) |
 
 The changelog stays next to the package on purpose: the PR that changes a
